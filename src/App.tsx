@@ -20,11 +20,14 @@ type Section = 'INDEX' | 'TIMELINE' | 'CAPABILITIES' | 'WORK' | 'CONTACTS';
 export default function App() {
   const [activeSection, setActiveSection] = useState<Section>('INDEX');
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
-  const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
+  const [zoomIndex, setZoomIndex] = useState<number | null>(null);
   const [language, setLanguage] = useState<Language>('EN');
   const [currentTime, setCurrentTime] = useState(new Date());
 
   const t = TRANSLATIONS[language];
+
+  const activeProject = PROJECTS.find(p => p.id === selectedProjectId);
+  const modalImages = activeProject?.gallery.map(img => img.full) || [];
 
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
@@ -125,7 +128,7 @@ export default function App() {
               <ProjectDetail 
                 projectId={selectedProjectId} 
                 onBack={() => setSelectedProjectId(null)} 
-                onImageClick={setFullScreenImage}
+                onImageClick={(index) => setZoomIndex(index)}
                 language={language}
               />
             ) : (
@@ -147,10 +150,13 @@ export default function App() {
         </AnimatePresence>
 
         <AnimatePresence>
-          {fullScreenImage && (
+          {zoomIndex !== null && activeProject && (
             <ImageModal 
-              src={fullScreenImage} 
-              onClose={() => setFullScreenImage(null)} 
+              images={modalImages}
+              currentIndex={zoomIndex}
+              onClose={() => setZoomIndex(null)} 
+              onNext={() => setZoomIndex((zoomIndex + 1) % modalImages.length)}
+              onPrev={() => setZoomIndex((zoomIndex - 1 + modalImages.length) % modalImages.length)}
               language={language}
             />
           )}
@@ -386,7 +392,7 @@ function WorkSection({ onSelectProject, language }: { onSelectProject: (id: stri
   );
 }
 
-function ProjectDetail({ projectId, onBack, onImageClick, language }: { projectId: string, onBack: () => void, onImageClick: (src: string) => void, language: Language }) {
+function ProjectDetail({ projectId, onBack, onImageClick, language }: { projectId: string, onBack: () => void, onImageClick: (index: number) => void, language: Language }) {
   const project = PROJECTS.find(p => p.id === projectId);
   const t = TRANSLATIONS[language].work;
   if (!project) return null;
@@ -430,7 +436,7 @@ function ProjectDetail({ projectId, onBack, onImageClick, language }: { projectI
             <div 
               key={i} 
               className="aspect-video overflow-hidden bg-paper cursor-zoom-in group"
-              onClick={() => onImageClick(img.full)}
+              onClick={() => onImageClick(i)}
             >
               <img 
                 src={img.thumb} 
@@ -446,8 +452,34 @@ function ProjectDetail({ projectId, onBack, onImageClick, language }: { projectI
   );
 }
 
-function ImageModal({ src, onClose, language }: { src: string, onClose: () => void, language: Language }) {
+function ImageModal({ 
+  images, 
+  currentIndex, 
+  onClose, 
+  onNext, 
+  onPrev, 
+  language 
+}: { 
+  images: string[], 
+  currentIndex: number, 
+  onClose: () => void, 
+  onNext: () => void, 
+  onPrev: () => void, 
+  language: Language 
+}) {
   const t = TRANSLATIONS[language].common;
+  const src = images[currentIndex];
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight') onNext();
+      if (e.key === 'ArrowLeft') onPrev();
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onNext, onPrev, onClose]);
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -456,6 +488,13 @@ function ImageModal({ src, onClose, language }: { src: string, onClose: () => vo
       className="fixed inset-0 z-50 flex items-center justify-center bg-ink/95 p-4 md:p-12"
       onClick={onClose}
     >
+      <div className="absolute top-8 left-8 flex items-center gap-4 z-50">
+        <div className="w-3 h-3 bg-primary" />
+        <span className="font-mono text-xs text-white tracking-widest uppercase">
+          {currentIndex + 1} / {images.length}
+        </span>
+      </div>
+
       <button 
         className="absolute top-8 right-8 text-white hover:text-primary transition-colors z-50"
         onClick={onClose}
@@ -463,21 +502,51 @@ function ImageModal({ src, onClose, language }: { src: string, onClose: () => vo
         <span className="font-mono text-xs tracking-widest uppercase">{t.close}</span>
       </button>
 
+      {/* Navigation Buttons */}
+      <div className="absolute inset-y-0 left-0 w-24 flex items-center justify-center z-40">
+        <button 
+          onClick={(e) => { e.stopPropagation(); onPrev(); }}
+          className="p-4 text-white/20 hover:text-primary transition-colors group"
+        >
+          <span className="font-mono text-4xl group-hover:-translate-x-2 transition-transform block">←</span>
+        </button>
+      </div>
+
+      <div className="absolute inset-y-0 right-0 w-24 flex items-center justify-center z-40">
+        <button 
+          onClick={(e) => { e.stopPropagation(); onNext(); }}
+          className="p-4 text-white/20 hover:text-primary transition-colors group"
+        >
+          <span className="font-mono text-4xl group-hover:translate-x-2 transition-transform block">→</span>
+        </button>
+      </div>
+
       <motion.div
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.9, opacity: 0 }}
-        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-        className="relative max-w-full max-h-full"
+        key={src}
+        initial={{ x: 20, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        exit={{ x: -20, opacity: 0 }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+        className="relative max-w-full max-h-full flex items-center justify-center"
         onClick={(e) => e.stopPropagation()}
       >
         <img 
           src={src} 
           alt="Full screen view" 
-          className="max-w-full max-h-[90vh] object-contain"
+          className="max-w-full max-h-[85vh] object-contain shadow-2xl"
           referrerPolicy="no-referrer"
         />
       </motion.div>
+
+      {/* Thumbnails indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-50">
+        {images.map((_, i) => (
+          <div 
+            key={i}
+            className={`h-1 transition-all duration-300 ${i === currentIndex ? 'w-8 bg-primary' : 'w-4 bg-white/20'}`}
+          />
+        ))}
+      </div>
     </motion.div>
   );
 }
