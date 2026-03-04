@@ -495,7 +495,7 @@ function SignalSection({ language }: { language: Language }) {
       <div className="mb-24 flex flex-col md:flex-row items-start md:items-end gap-12">
         <div className="w-48 h-64 bg-paper overflow-hidden border border-ink/10 flex-shrink-0">
           <img 
-            src="/images/bru.png" 
+            src="https://picsum.photos/seed/brunab/400/600" 
             alt="Bruna Bulgarelli" 
             className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
             referrerPolicy="no-referrer"
