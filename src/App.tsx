@@ -488,7 +488,7 @@ function ImageModal({
       className="fixed inset-0 z-50 flex items-center justify-center bg-ink/95 p-4 md:p-12"
       onClick={onClose}
     >
-      <div className="absolute top-8 left-8 flex items-center gap-4 z-50">
+      <div className="absolute top-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-50">
         <div className="w-3 h-3 bg-primary" />
         <span className="font-mono text-xs text-white tracking-widest uppercase">
           {currentIndex + 1} / {images.length}
@@ -503,19 +503,19 @@ function ImageModal({
       </button>
 
       {/* Navigation Buttons */}
-      <div className="absolute inset-y-0 left-0 w-24 flex items-center justify-center z-40">
+      <div className="absolute inset-y-0 left-0 w-24 flex items-center justify-center z-50">
         <button 
           onClick={(e) => { e.stopPropagation(); onPrev(); }}
-          className="p-4 text-white/20 hover:text-primary transition-colors group"
+          className="p-4 text-white/40 hover:text-primary transition-colors group"
         >
           <span className="font-mono text-4xl group-hover:-translate-x-2 transition-transform block">←</span>
         </button>
       </div>
 
-      <div className="absolute inset-y-0 right-0 w-24 flex items-center justify-center z-40">
+      <div className="absolute inset-y-0 right-0 w-24 flex items-center justify-center z-50">
         <button 
           onClick={(e) => { e.stopPropagation(); onNext(); }}
-          className="p-4 text-white/20 hover:text-primary transition-colors group"
+          className="p-4 text-white/40 hover:text-primary transition-colors group"
         >
           <span className="font-mono text-4xl group-hover:translate-x-2 transition-transform block">→</span>
         </button>
@@ -527,13 +527,13 @@ function ImageModal({
         animate={{ x: 0, opacity: 1 }}
         exit={{ x: -20, opacity: 0 }}
         transition={{ duration: 0.3, ease: 'easeOut' }}
-        className="relative max-w-full max-h-full flex items-center justify-center"
+        className="relative max-w-[calc(100%-12rem)] max-h-full flex items-center justify-center z-30"
         onClick={(e) => e.stopPropagation()}
       >
         <img 
           src={src} 
           alt="Full screen view" 
-          className="max-w-full max-h-[85vh] object-contain shadow-2xl"
+          className="max-w-full max-h-[75vh] object-contain shadow-2xl"
           referrerPolicy="no-referrer"
         />
       </motion.div>
