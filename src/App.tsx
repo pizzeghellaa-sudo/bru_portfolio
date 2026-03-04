@@ -51,8 +51,8 @@ export default function App() {
       <aside className="hidden md:flex flex-col justify-between w-[320px] h-full border-r border-ink/10 bg-background-light z-20 relative">
         <div className="p-8 flex flex-col gap-12">
           <div>
-            <h1 className="text-2xl font-black tracking-tighter leading-none text-ink">
-              Bruna Bulgarelli<br />
+            <h1 className="text-xl font-medium tracking-[0.1em] leading-none text-ink uppercase font-montserrat">
+              BRU BULGARELLI<br />
               <span className="text-xs font-mono text-slate-400 tracking-widest mt-1 block">PORTFOLIO 2026</span>
             </h1>
           </div>
@@ -100,7 +100,7 @@ export default function App() {
       <main className="flex-1 h-full overflow-y-auto no-scrollbar relative z-10">
         {/* Mobile Header */}
         <div className="md:hidden flex justify-between items-center p-6 border-b border-ink/10 bg-background-light sticky top-0 z-30">
-          <h1 className="text-xl font-black tracking-tighter">Bruna Bulgarelli</h1>
+          <h1 className="text-lg font-medium tracking-[0.1em] uppercase font-montserrat">BRU BULGARELLI</h1>
           <div className="flex items-center gap-4">
             <button 
               onClick={() => setLanguage(language === 'EN' ? 'IT' : 'EN')}
@@ -502,8 +502,8 @@ function SignalSection({ language }: { language: Language }) {
           />
         </div>
         <div>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-none text-ink">
-            Bruna Bulgarelli
+          <h2 className="text-3xl md:text-5xl lg:text-3xl font-medium tracking-[0.1em] leading-none text-ink uppercase font-montserrat">
+            BRU BULGARELLI
           </h2>
           <div className="mt-8 font-mono text-xs text-slate-400 uppercase tracking-widest space-y-1">
             <p>{t.availability}</p>

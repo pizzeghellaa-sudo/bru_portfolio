@@ -49,7 +49,7 @@ export const TRANSLATIONS = {
     signal: {
       availability: 'AVAILABLE FOR NEW OPPORTUNITIES.',
       responseTime: 'RESPONSE TIME: < 24HRS.',
-      footer: '© 2024 Bruna Bulgarelli.\nALL RIGHTS RESERVED.',
+      footer: '© 2024 BRU BULGARELLI.\nALL RIGHTS RESERVED.',
       builtWith: 'BUILT WITH LOGIC',
       categories: {
         NETWORK: 'NETWORK',
@@ -109,7 +109,7 @@ export const TRANSLATIONS = {
     signal: {
       availability: 'DISPONIBILE PER NUOVE OPPORTUNITÀ.',
       responseTime: 'TEMPO DI RISPOSTA: < 24ORE.',
-      footer: '© 2024 Bruna Bulgarelli.\nTUTTI I DIRITTI RISERVATI.',
+      footer: '© 2024 BRU BULGARELLI.\nTUTTI I DIRITTI RISERVATI.',
       builtWith: 'COSTRUITO CON LOGICA',
       categories: {
         NETWORK: 'RETE',

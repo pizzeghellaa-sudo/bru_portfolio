@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700;900&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-display: "Work Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-montserrat: "Montserrat", sans-serif;
 
   --color-primary: #fa3d33;
   --color-background-light: #f8f6f5;
