@@ -49,8 +49,8 @@ export const TRANSLATIONS = {
     signal: {
       availability: 'AVAILABLE FOR NEW OPPORTUNITIES.',
       responseTime: 'RESPONSE TIME: < 24HRS.',
-      footer: '© 2024 BRU BULGARELLI.\nALL RIGHTS RESERVED.',
-      builtWith: 'BUILT WITH LOGIC',
+      footer: '© 2026 BRU BULGARELLI.\nALL RIGHTS RESERVED.',
+      builtWith: 'BUILT WITH AI',
       categories: {
         NETWORK: 'NETWORK',
         VISUALS: 'VISUALS',
@@ -109,8 +109,8 @@ export const TRANSLATIONS = {
     signal: {
       availability: 'DISPONIBILE PER NUOVE OPPORTUNITÀ.',
       responseTime: 'TEMPO DI RISPOSTA: < 24ORE.',
-      footer: '© 2024 BRU BULGARELLI.\nTUTTI I DIRITTI RISERVATI.',
-      builtWith: 'COSTRUITO CON LOGICA',
+      footer: '© 2026 BRU BULGARELLI.\nTUTTI I DIRITTI RISERVATI.',
+      builtWith: 'COSTRUITO CON AI',
       categories: {
         NETWORK: 'RETE',
         VISUALS: 'VISUALS',
