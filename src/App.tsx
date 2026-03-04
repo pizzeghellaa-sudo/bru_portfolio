@@ -14,17 +14,21 @@ import {
   ExternalLink,
   Globe
 } from 'lucide-react';
+import bruPng from "./assets/bru.png";
 
 type Section = 'INDEX' | 'TIMELINE' | 'CAPABILITIES' | 'WORK' | 'CONTACTS';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<Section>('INDEX');
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
-  const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
+  const [zoomIndex, setZoomIndex] = useState<number | null>(null);
   const [language, setLanguage] = useState<Language>('EN');
   const [currentTime, setCurrentTime] = useState(new Date());
 
   const t = TRANSLATIONS[language];
+
+  const activeProject = PROJECTS.find(p => p.id === selectedProjectId);
+  const modalImages = activeProject?.gallery.map(img => img.full) || [];
 
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
@@ -51,8 +55,8 @@ export default function App() {
       <aside className="hidden md:flex flex-col justify-between w-[320px] h-full border-r border-ink/10 bg-background-light z-20 relative">
         <div className="p-8 flex flex-col gap-12">
           <div>
-            <h1 className="text-2xl font-black tracking-tighter leading-none text-ink">
-              Bruna Bulgarelli<br />
+            <h1 className="text-xl font-medium tracking-[0.1em] leading-none text-ink uppercase font-montserrat">
+              BRU BULGARELLI<br />
               <span className="text-xs font-mono text-slate-400 tracking-widest mt-1 block">PORTFOLIO 2026</span>
             </h1>
           </div>
@@ -100,7 +104,7 @@ export default function App() {
       <main className="flex-1 h-full overflow-y-auto no-scrollbar relative z-10">
         {/* Mobile Header */}
         <div className="md:hidden flex justify-between items-center p-6 border-b border-ink/10 bg-background-light sticky top-0 z-30">
-          <h1 className="text-xl font-black tracking-tighter">Bruna Bulgarelli</h1>
+          <h1 className="text-lg font-medium tracking-[0.1em] uppercase font-montserrat">BRU BULGARELLI</h1>
           <div className="flex items-center gap-4">
             <button 
               onClick={() => setLanguage(language === 'EN' ? 'IT' : 'EN')}
@@ -125,7 +129,7 @@ export default function App() {
               <ProjectDetail 
                 projectId={selectedProjectId} 
                 onBack={() => setSelectedProjectId(null)} 
-                onImageClick={setFullScreenImage}
+                onImageClick={(index) => setZoomIndex(index)}
                 language={language}
               />
             ) : (
@@ -147,10 +151,13 @@ export default function App() {
         </AnimatePresence>
 
         <AnimatePresence>
-          {fullScreenImage && (
+          {zoomIndex !== null && activeProject && (
             <ImageModal 
-              src={fullScreenImage} 
-              onClose={() => setFullScreenImage(null)} 
+              images={modalImages}
+              currentIndex={zoomIndex}
+              onClose={() => setZoomIndex(null)} 
+              onNext={() => setZoomIndex((zoomIndex + 1) % modalImages.length)}
+              onPrev={() => setZoomIndex((zoomIndex - 1 + modalImages.length) % modalImages.length)}
               language={language}
             />
           )}
@@ -386,7 +393,7 @@ function WorkSection({ onSelectProject, language }: { onSelectProject: (id: stri
   );
 }
 
-function ProjectDetail({ projectId, onBack, onImageClick, language }: { projectId: string, onBack: () => void, onImageClick: (src: string) => void, language: Language }) {
+function ProjectDetail({ projectId, onBack, onImageClick, language }: { projectId: string, onBack: () => void, onImageClick: (index: number) => void, language: Language }) {
   const project = PROJECTS.find(p => p.id === projectId);
   const t = TRANSLATIONS[language].work;
   if (!project) return null;
@@ -430,7 +437,7 @@ function ProjectDetail({ projectId, onBack, onImageClick, language }: { projectI
             <div 
               key={i} 
               className="aspect-video overflow-hidden bg-paper cursor-zoom-in group"
-              onClick={() => onImageClick(img.full)}
+              onClick={() => onImageClick(i)}
             >
               <img 
                 src={img.thumb} 
@@ -446,8 +453,34 @@ function ProjectDetail({ projectId, onBack, onImageClick, language }: { projectI
   );
 }
 
-function ImageModal({ src, onClose, language }: { src: string, onClose: () => void, language: Language }) {
+function ImageModal({ 
+  images, 
+  currentIndex, 
+  onClose, 
+  onNext, 
+  onPrev, 
+  language 
+}: { 
+  images: string[], 
+  currentIndex: number, 
+  onClose: () => void, 
+  onNext: () => void, 
+  onPrev: () => void, 
+  language: Language 
+}) {
   const t = TRANSLATIONS[language].common;
+  const src = images[currentIndex];
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight') onNext();
+      if (e.key === 'ArrowLeft') onPrev();
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onNext, onPrev, onClose]);
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -456,6 +489,13 @@ function ImageModal({ src, onClose, language }: { src: string, onClose: () => vo
       className="fixed inset-0 z-50 flex items-center justify-center bg-ink/95 p-4 md:p-12"
       onClick={onClose}
     >
+      <div className="absolute top-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-50">
+        <div className="w-3 h-3 bg-primary" />
+        <span className="font-mono text-xs text-white tracking-widest uppercase">
+          {currentIndex + 1} / {images.length}
+        </span>
+      </div>
+
       <button 
         className="absolute top-8 right-8 text-white hover:text-primary transition-colors z-50"
         onClick={onClose}
@@ -463,21 +503,51 @@ function ImageModal({ src, onClose, language }: { src: string, onClose: () => vo
         <span className="font-mono text-xs tracking-widest uppercase">{t.close}</span>
       </button>
 
+      {/* Navigation Buttons */}
+      <div className="absolute inset-y-0 left-0 w-24 flex items-center justify-center z-50">
+        <button 
+          onClick={(e) => { e.stopPropagation(); onPrev(); }}
+          className="p-4 text-white/40 hover:text-primary transition-colors group"
+        >
+          <span className="font-mono text-4xl group-hover:-translate-x-2 transition-transform block">←</span>
+        </button>
+      </div>
+
+      <div className="absolute inset-y-0 right-0 w-24 flex items-center justify-center z-50">
+        <button 
+          onClick={(e) => { e.stopPropagation(); onNext(); }}
+          className="p-4 text-white/40 hover:text-primary transition-colors group"
+        >
+          <span className="font-mono text-4xl group-hover:translate-x-2 transition-transform block">→</span>
+        </button>
+      </div>
+
       <motion.div
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.9, opacity: 0 }}
-        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-        className="relative max-w-full max-h-full"
+        key={src}
+        initial={{ x: 20, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        exit={{ x: -20, opacity: 0 }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+        className="relative max-w-[calc(100%-12rem)] max-h-full flex items-center justify-center z-30"
         onClick={(e) => e.stopPropagation()}
       >
         <img 
           src={src} 
           alt="Full screen view" 
-          className="max-w-full max-h-[90vh] object-contain"
+          className="max-w-full max-h-[75vh] object-contain shadow-2xl"
           referrerPolicy="no-referrer"
         />
       </motion.div>
+
+      {/* Thumbnails indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-50">
+        {images.map((_, i) => (
+          <div 
+            key={i}
+            className={`h-1 transition-all duration-300 ${i === currentIndex ? 'w-8 bg-primary' : 'w-4 bg-white/20'}`}
+          />
+        ))}
+      </div>
     </motion.div>
   );
 }
@@ -495,15 +565,15 @@ function SignalSection({ language }: { language: Language }) {
       <div className="mb-24 flex flex-col md:flex-row items-start md:items-end gap-12">
         <div className="w-48 h-64 bg-paper overflow-hidden border border-ink/10 flex-shrink-0">
           <img 
-            src="/images/bru.png" 
+            src={bruPng}
             alt="Bruna Bulgarelli" 
             className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
             referrerPolicy="no-referrer"
           />
         </div>
         <div>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-none text-ink">
-            Bruna Bulgarelli
+          <h2 className="text-3xl md:text-5xl lg:text-3xl font-medium tracking-[0.1em] leading-none text-ink uppercase font-montserrat">
+            BRU BULGARELLI
           </h2>
           <div className="mt-8 font-mono text-xs text-slate-400 uppercase tracking-widest space-y-1">
             <p>{t.availability}</p>
