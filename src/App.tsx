@@ -37,9 +37,11 @@ export default function App() {
   }, []);
 
   const formatTime = (date: Date) => {
-    return date.toLocaleTimeString('en-GB', { hour12: false });
-  };
-
+    return date.toLocaleTimeString('en-GB', {
+    hour12: false,
+    timeZoneName: 'short'
+  });
+};
   const navItems: Section[] = ['INDEX', 'TIMELINE', 'CAPABILITIES', 'WORK', 'CONTACTS'];
 
   const handleSectionChange = (section: Section) => {
@@ -96,7 +98,7 @@ export default function App() {
           </div>
           <p className="font-mono text-xs text-slate-400 uppercase tracking-widest">
             VALEGGIO SUL MINCIO, IT <br />
-            {formatTime(currentTime)} UTC
+            {formatTime(currentTime)}
           </p>
         </div>
       </aside>
