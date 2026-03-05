@@ -86,15 +86,15 @@ export const EXPERIENCE: Experience[] = [
 
 export const PROJECTS: Project[] = [
   {
-    id: "portfolio",
-    title: "PORTFOLIO",
+    id: "website",
+    title: "Personal site",
     category: "UI / UX / PRODUCT",
     tags: ["WEB"],
     image: projectThumb("portfolio"),
     gallery: projectGallery("portfolio"),
     description: {
-      EN: "Personal portfolio creation:\n\n1. Ideation — defined the purpose, audience, and goals.\n\n2. Structure — mapped the pages and navigation (site architecture).\n\n3. Wireframe — sketch page layouts and user flows.\n\n4. Design — created visual style, typography, and UI components using Sticth AI. Interactive session starting from a prompt and improving all the visual elements.\n\n5. Build & Launch — developed the site using AI and Gemini 3 Flash (Vite, React.js). Repeated cycles to  add functionalities then committed to GitHub and finally automated the deployment using Vercel.",
-      IT: "Creazione portfolio personale:\n\n1. Ideazione — definizione di scopo, pubblico e obiettivi.\n\n2. Struttura — mappatura delle pagine e della navigazione (architettura del sito).\n\n3. Wireframe — schizzi dei layout delle pagine e dei flussi utente.\n\n4. Design — creazione dello stile visivo, della tipografia e dei componenti UI utilizzando Stitch AI. Sessione interattiva partita da un prompt e miglioramento progressivo di tutti gli elementi visivi.\n\n5. Sviluppo e lancio — sviluppo del sito utilizzando AI e Gemini 3 Flash (Vite, React.js). Cicli iterativi per aggiungere funzionalità, commit su GitHub e infine deploy automatizzato tramite Vercel."
+      EN: "Personal website creation:\n\n1. Ideation — defined the purpose, audience, and goals.\n\n2. Structure — mapped the pages and navigation (site architecture).\n\n3. Wireframe — sketch page layouts and user flows.\n\n4. Design — created visual style, typography, and UI components using Sticth AI. Interactive session starting from a prompt and improving all the visual elements.\n\n5. Build & Launch — developed the site using AI and Gemini 3 Flash (Vite, React.js). Repeated cycles to  add functionalities then committed to GitHub and finally automated the deployment using Vercel.",
+      IT: "Creazione sito web personale:\n\n1. Ideazione — definizione di scopo, pubblico e obiettivi.\n\n2. Struttura — mappatura delle pagine e della navigazione (architettura del sito).\n\n3. Wireframe — schizzi dei layout delle pagine e dei flussi utente.\n\n4. Design — creazione dello stile visivo, della tipografia e dei componenti UI utilizzando Stitch AI. Sessione interattiva partita da un prompt e miglioramento progressivo di tutti gli elementi visivi.\n\n5. Sviluppo e lancio — sviluppo del sito utilizzando AI e Gemini 3 Flash (Vite, React.js). Cicli iterativi per aggiungere funzionalità, commit su GitHub e infine deploy automatizzato tramite Vercel."
     }
 	
   },
