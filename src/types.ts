@@ -108,12 +108,12 @@ export const PROJECTS: Project[] = [
 	
   },
   {
-    id: "neon",
-    title: "NEON SYSTEMS",
-    category: "UI / UX / PRODUCT",
-    tags: ["INTERFACE"],
-    image: projectThumb("neon"),
-	gallery: projectGallery("neon"),
+    id: "caesius",
+    title: "Hotel Caesius Brand Book",
+    category: "BRANDING",
+    tags: ["BRANDING"],
+    image: projectThumb("caesius"),
+	  gallery: projectGallery("caesius"),
     description: {
       EN: "Design and development of a cloud-based infrastructure monitoring tool. The challenge was to make complex data scannable and actionable for DevOps engineers. We implemented a dark-mode first interface with high-contrast accents to highlight critical system alerts and performance metrics.",
       IT: "Design e sviluppo di uno strumento di monitoraggio dell'infrastruttura basato su cloud. La sfida era rendere i dati complessi scansionabili e azionabili per gli ingegneri DevOps. Abbiamo implementato un'interfaccia dark-mode first con accenti ad alto contrasto per evidenziare gli avvisi critici del sistema e le metriche di performance."

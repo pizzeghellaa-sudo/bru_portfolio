@@ -456,7 +456,7 @@ function ProjectDetail({ projectId, onBack, onImageClick, language }: { projectI
               <img 
                 src={img.thumb} 
                 alt={`${project.title} gallery ${i}`}
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="w-full1 h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
             </div>
