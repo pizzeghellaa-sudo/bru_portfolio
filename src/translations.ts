@@ -18,7 +18,7 @@ export const TRANSLATIONS = {
       scroll: 'SCROLL TO EXPLORE',
     },
     timeline: {
-      title: 'CHRONOLOGY',
+      title: 'TIMELINE',
       scroll: 'SCROLL FOR CAPABILITIES',
     },
     capabilities: {
