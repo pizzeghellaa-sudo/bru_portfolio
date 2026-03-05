@@ -19,6 +19,7 @@ export const TRANSLATIONS = {
     },
     timeline: {
       title: 'TIMELINE',
+      subtitle: 'PAST & PRESENT',
       scroll: 'SCROLL FOR CAPABILITIES',
     },
     capabilities: {
@@ -41,6 +42,7 @@ export const TRANSLATIONS = {
     },
     work: {
       title: 'WORK',
+      subtitle: 'PORTFOLIO',
       filters: {
         ALL: 'ALL',
         IDENTITY: 'IDENTITY',
@@ -83,6 +85,7 @@ export const TRANSLATIONS = {
     },
     timeline: {
       title: 'CRONOLOGIA',
+      subtitle: 'PASSATO & PRESENTE',
       scroll: 'SCORRI PER LE COMPETENZE',
     },
     capabilities: {
@@ -105,7 +108,8 @@ export const TRANSLATIONS = {
     },
     work: {
       title: 'PROGETTI',
-      filters: {
+        subtitle: 'PORTFOLIO',
+        filters: {
         ALL: 'TUTTI',
         IDENTITY: 'IDENTITÀ',
         DIGITAL: 'DIGITALE',

@@ -248,6 +248,9 @@ function TimelineSection({ language }: { language: Language }) {
             style={{ color: 'rgb(179, 178, 178)' }}>
             {t.title}
         </h2>
+
+        <div className="w-24 h-1 bg-primary mt-8" />
+        <p className="mt-4 font-mono text-primary text-sm tracking-widest uppercase">{t.subtitle}</p>        
       </header>
 
       <div className="flex flex-col border-t border-ink/10">
@@ -343,6 +346,9 @@ function WorkSection({ onSelectProject, language }: { onSelectProject: (id: stri
         <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-ink uppercase"
                     style={{ color: 'rgb(179, 178, 178)' }}>
             {t.title}
+
+            <div className="w-24 h-1 bg-primary mt-8" />
+              <p className="mt-4 font-mono text-primary text-sm tracking-widest uppercase">{t.subtitle}</p>                         
         </h2>
 
         <nav className="flex gap-6">
