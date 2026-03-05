@@ -242,7 +242,10 @@ function TimelineSection({ language }: { language: Language }) {
   return (
     <div className="flex flex-col gap-24">
       <header>
-        <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-ink uppercase">{t.title}</h2>
+        <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-ink uppercase"
+            style={{ color: 'rgb(179, 178, 178)' }}>
+            {t.title}
+        </h2>
       </header>
 
       <div className="flex flex-col border-t border-ink/10">
@@ -274,7 +277,11 @@ function CapabilitiesSection({ language }: { language: Language }) {
   return (
     <div className="flex flex-col gap-24">
       <header className="relative">
-        <h2 className="text-7xl md:text-9xl font-black tracking-tighter leading-none text-ink uppercase">{t.title}</h2>
+        <h2 className="text-6xl md:text-8xl font-black tracking-tighter leading-none text-ink uppercase"
+                    style={{ color: 'rgb(179, 178, 178)' }}>
+            {t.title}
+        </h2>
+
         <div className="w-24 h-1 bg-primary mt-8" />
         <p className="mt-4 font-mono text-primary text-sm tracking-widest uppercase">{t.subtitle}</p>
       </header>
@@ -331,7 +338,11 @@ function WorkSection({ onSelectProject, language }: { onSelectProject: (id: stri
   return (
     <div className="flex flex-col gap-24">
       <header className="flex flex-col md:flex-row justify-between items-baseline gap-8">
-        <h2 className="text-7xl md:text-9xl font-black tracking-tighter text-ink uppercase">{t.title}</h2>
+        <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-ink uppercase"
+                    style={{ color: 'rgb(179, 178, 178)' }}>
+            {t.title}
+        </h2>
+
         <nav className="flex gap-6">
           {filters.map((f) => (
             <button

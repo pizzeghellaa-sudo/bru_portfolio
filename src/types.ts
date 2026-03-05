@@ -29,7 +29,7 @@ export interface Project {
 
 export const EXPERIENCE: Experience[] = [
   {
-    period: "2024 — PRES",
+    period: "2025 — PRES",
     role: "Freelance",
     company: "Self employed",
     description: {
@@ -74,13 +74,22 @@ export const EXPERIENCE: Experience[] = [
     }
   },
   {
-    period: "1990 — 2005",
+    period: "2003 — 2005",
     role: "Professional and Freelance Collaboration",
     company: "Self employed",
     description: {
-      EN: "xxxEditorial design, multilingual layout, technical manuals, promotional materials, and static website design. Collaborations with publishing houses, communication agencies, software companies, and professional training institutes.",
-      IT: "xxxGrafica editoriale, impaginazioni multilingua, manualistica tecnica, materiali promozionali e realizzazione di siti web statici. Collaborazioni con case editrici, agenzie di comunicazione, software house e istituti professionali."
-    },
+      EN: "Editorial design, multilingual layout, technical manuals, promotional materials, and static website design. Collaborations with publishing houses, communication agencies, software companies, and professional training institutes.",
+      IT: "Grafica editoriale, impaginazioni multilingua, manualistica tecnica, materiali promozionali e realizzazione di siti web statici. Collaborazioni con case editrici, agenzie di comunicazione, software house e istituti professionali."
+    }
+  },
+  {
+    period: "1995 — 2002",
+    role: "Founder and Co-owner",
+    company: "Pressart S.r.l.",
+    description: {
+      EN: "Editorial design, multilingual layout, technical manuals, promotional materials, and static website design. Collaborations with publishing houses, communication agencies, software companies, and professional training institutes.",
+      IT: "Grafica editoriale, impaginazioni multilingua, manualistica tecnica, materiali promozionali e realizzazione di siti web statici. Collaborazioni con case editrici, agenzie di comunicazione, software house e istituti professionali."
+    }
   }
 ];
 
