@@ -412,7 +412,8 @@ function ProjectDetail({ projectId, onBack, onImageClick, language }: { projectI
         </button>
         
         <div className="flex flex-col md:flex-row justify-between items-baseline gap-8">
-          <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-ink uppercase">{project.title}</h2>
+          <h2 className="text-6xl md:text-7xl font-black tracking-tighter text-ink uppercase"
+            style={{ color: 'rgb(179, 178, 178)' }}>{project.title}</h2>
           <div className="font-mono text-xs text-slate-400 uppercase tracking-widest">
             {project.id} — {project.category}
           </div>
