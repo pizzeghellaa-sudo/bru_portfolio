@@ -85,7 +85,7 @@ export const TRANSLATIONS = {
     },
     timeline: {
       title: 'CRONOLOGIA',
-      subtitle: 'PASSATO & PRESENTE',
+      subtitle: 'PASSATO E PRESENTE',
       scroll: 'SCORRI PER LE COMPETENZE',
     },
     capabilities: {
