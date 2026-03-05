@@ -87,8 +87,8 @@ export const EXPERIENCE: Experience[] = [
     role: "Founder and Co-owner",
     company: "Pressart S.r.l.",
     description: {
-      EN: "Editorial design, multilingual layout, technical manuals, promotional materials, and static website design. Collaborations with publishing houses, communication agencies, software companies, and professional training institutes.",
-      IT: "Grafica editoriale, impaginazioni multilingua, manualistica tecnica, materiali promozionali e realizzazione di siti web statici. Collaborazioni con case editrici, agenzie di comunicazione, software house e istituti professionali."
+      EN: "A creative agency specialized in branding and printed communication. The studio helped businesses shape strong visual identities through logo design, editorial layouts, packaging, and high-quality print materials. By combining strategic thinking with refined graphic design, Pressart transformed ideas into tangible brand experiences that communicated clarity, character, and lasting impact.",
+      IT: "Un’agenzia creativa specializzata in branding e comunicazione stampata. Lo studio aiutava le aziende a costruire identità visive solide attraverso la progettazione di loghi, layout editoriali, packaging e materiali di stampa di alta qualità. Combinando pensiero strategico e graphic design raffinato, Pressart trasformava le idee in esperienze di marca tangibili, capaci di comunicare chiarezza, carattere e un impatto duraturo."
     }
   }
 ];
