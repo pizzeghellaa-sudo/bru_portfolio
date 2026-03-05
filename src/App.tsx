@@ -555,7 +555,7 @@ function SignalSection({ language }: { language: Language }) {
   return (
     <div className="flex-1 flex flex-col justify-center relative">
       <div className="mb-24 flex flex-col md:flex-row items-start md:items-end gap-12">
-        <div className="w-48 h-64 bg-paper overflow-hidden border border-ink/10 flex-shrink-0">
+        <div className="w-48 h-48 overflow-hidden ink/10 flex-shrink-0">
           <img 
             src={bruPng}
             alt="Bruna Bulgarelli" 
