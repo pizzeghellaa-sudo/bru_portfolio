@@ -1,4 +1,5 @@
 // @ts-nocheck
+import { Analytics } from "@vercel/analytics/next"
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { EXPERIENCE, PROJECTS } from './types';
