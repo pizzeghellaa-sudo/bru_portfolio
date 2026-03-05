@@ -323,7 +323,7 @@ function WorkSection({ onSelectProject, language }: { onSelectProject: (id: stri
     if (filter === 'ALL') return true;
     const cat = project.category.toUpperCase();
     if (filter === 'IDENTITY') return cat.includes('IDENTITY') || cat.includes('BRANDING');
-    if (filter === 'DIGITAL') return cat.includes('UI') || cat.includes('UX') || cat.includes('PRODUCT') || cat.includes('SYSTEM');
+    if (filter === 'DIGITAL') return cat.includes('UI') || cat.includes('UX') || cat.includes('PRODUCT') || cat.includes('WEBSITE');
     if (filter === 'PRINT') return cat.includes('PRINT') || cat.includes('EDITORIAL');
     return false;
   });

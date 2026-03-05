@@ -88,7 +88,7 @@ export const PROJECTS: Project[] = [
   {
     id: "portfolio",
     title: "PORTFOLIO",
-    category: "IDENTITY / SYSTEM",
+    category: "UI / UX / PRODUCT",
     tags: ["WEB"],
     image: projectThumb("portfolio"),
     gallery: projectGallery("portfolio"),
