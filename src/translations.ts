@@ -92,7 +92,7 @@ export const TRANSLATIONS = {
         discipline: '01 — DISCIPLINA',
         tooling: '02 — STRUMENTI',
       },
-      disciplines: ['Brand Identity', 'Identità Visiva', 'Design Editoriale', 'Packaging', 'Web design & SEO', 'Processi di stampa Process'],
+      disciplines: ['Brand Identity', 'Identità Visiva', 'Design Editoriale', 'Packaging', 'Web design & SEO', 'Processi di stampa'],
       tooling: [
         'Adobe InDesign',
         'Adobe Photoshop',
