@@ -53,8 +53,8 @@ export const TRANSLATIONS = {
       address: '37067 Valeggio sul Mincio (VR)',
       phone: '+39 347 3587524',
       email: 'bulgarellibru@gmail.com',      
-      availability: 'AVAILABLE FOR NEW OPPORTUNITIES.',
-      responseTime: 'RESPONSE TIME: < 24HRS.',
+      availability: 'AVAILABLE FOR NEW OPPORTUNITIES',
+      responseTime: 'RESPONSE TIME: < 24HRS',
       footer: '© 2026 Bruna Bulgarelli.\nALL RIGHTS RESERVED.',
       builtWith: 'BUILT WITH AI',
       categories: {
@@ -117,8 +117,8 @@ export const TRANSLATIONS = {
       address: '37067 Valeggio sul Mincio (VR)',
       phone: '+39 347 3587524',
       email: 'bulgarellibru@gmail.com',
-      availability: 'DISPONIBILE PER NUOVE OPPORTUNITÀ.',
-      responseTime: 'TEMPO DI RISPOSTA: < 24ORE.',
+      availability: 'DISPONIBILE PER NUOVE OPPORTUNITÀ',
+      responseTime: 'TEMPO DI RISPOSTA: < 24ORE',
       footer: '© 2026 Bruna Bulgarelli.\nTUTTI I DIRITTI RISERVATI.',
       builtWith: 'CREATO CON AI',
       categories: {
