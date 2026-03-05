@@ -119,7 +119,19 @@ export const PROJECTS: Project[] = [
       IT: "Design e sviluppo di uno strumento di monitoraggio dell'infrastruttura basato su cloud. La sfida era rendere i dati complessi scansionabili e azionabili per gli ingegneri DevOps. Abbiamo implementato un'interfaccia dark-mode first con accenti ad alto contrasto per evidenziare gli avvisi critici del sistema e le metriche di performance."
     }
   },
-  {
+    {
+    id: "emozione3",
+    title: "Emozione3 Brand Book",
+    category: "BRANDING",
+    tags: ["BRANDING"],
+    image: projectThumb("emozione3"),
+    gallery: projectGallery("emozione3"),
+    description: {
+      EN: "A minimalist rebranding for a sustainable architecture firm. The identity is built around a custom monospace typeface and a palette of recycled materials. The goal was to communicate structural integrity and environmental responsibility without relying on traditional 'green' tropes.",
+      IT: "Un rebranding minimalista per uno studio di architettura sostenibile. L'identità è costruita attorno a un carattere monospace personalizzato e una palette di materiali riciclati. L'obiettivo era comunicare integrità strutturale e responsabilità ambientale senza fare affidamento sui tradizionali tropi 'green'."
+    }
+   },
+   {
     id: "culture",
     title: "CULTURE LAB",
     category: "EDITORIAL / PRINT",
@@ -130,19 +142,6 @@ export const PROJECTS: Project[] = [
       EN: "An experimental publication exploring the intersection of technology and contemporary art. The design uses a rigid 12-column grid and oversized typography to create a sense of architectural space on the page. Each issue features custom-developed generative patterns that respond to the featured artist's work.",
       IT: "Una pubblicazione sperimentale che esplora l'intersezione tra tecnologia e arte contemporanea. Il design utilizza una rigida griglia a 12 colonne e una tipografia sovradimensionata per creare un senso di spazio architettonico sulla pagina. Ogni numero presenta pattern generativi sviluppati su misura che rispondono al lavoro dell'artista presentato."
     }
-
-  },
-  {
-    id: "brandx",
-    title: "BRAND X",
-    category: "BRANDING",
-    tags: ["BRANDING"],
-    image: projectThumb("brandx"),
-    gallery: projectGallery("brandx"),
-    description: {
-      EN: "A minimalist rebranding for a sustainable architecture firm. The identity is built around a custom monospace typeface and a palette of recycled materials. The goal was to communicate structural integrity and environmental responsibility without relying on traditional 'green' tropes.",
-      IT: "Un rebranding minimalista per uno studio di architettura sostenibile. L'identità è costruita attorno a un carattere monospace personalizzato e una palette di materiali riciclati. L'obiettivo era comunicare integrità strutturale e responsabilità ambientale senza fare affidamento sui tradizionali tropi 'green'."
-    }
-   }
+  }
 ];
 
