@@ -1,3 +1,5 @@
+import { address } from "motion/react-client";
+
 export type Language = 'EN' | 'IT';
 
 export const TRANSLATIONS = {
@@ -12,7 +14,7 @@ export const TRANSLATIONS = {
     index: {
       title: 'BRAND\n&\nVisual Designer',
       description: 'I design visual identities, packaging, printed materials and digital contents for brands, hotels, studios, and agencies that value quality and consistency.',
-      cta: 'VIEW ARCHIVE',
+      cta: 'MY WORK',
       scroll: 'SCROLL TO EXPLORE',
     },
     timeline: {
@@ -20,37 +22,41 @@ export const TRANSLATIONS = {
       scroll: 'SCROLL FOR CAPABILITIES',
     },
     capabilities: {
-      title: 'INSTRUMENTS',
+      title: 'CAPABILITIES',
       subtitle: 'METHODOLOGIES & STACK',
       categories: {
         discipline: '01 — DISCIPLINE',
         tooling: '02 — TOOLING',
       },
-      disciplines: ['Art Direction', 'Visual Identity', 'Editorial Design', 'User Interface', 'Interaction', 'Brand Identity & SEO'],
+      disciplines: ['Brand Identity', 'Visual Identity', 'Editorial Design', 'Packaging', 'Web design & SEO', 'Print Process'],
       tooling: [
-        'Adobe InDesign, Photoshop, Illustrator, Lightroom, XD',
+        'Adobe InDesign',
+        'Adobe Photoshop',
+        'Adobe Illustrator',
+        'Adobe Lightroom, XD',
         'Canva',
-        'AI tools for creativity and productivity',
-        'Production management in digital and offset print',
-        'Packaging & POP design'
+        'AI tools for creativity, productivity and automation'        
       ],
       quote: 'Precision, organization, and team coordination',
     },
     work: {
-      title: 'ARCHIVE',
+      title: 'WORK',
       filters: {
         ALL: 'ALL',
         IDENTITY: 'IDENTITY',
         DIGITAL: 'DIGITAL',
         PRINT: 'PRINT',
       },
-      back: 'BACK TO ARCHIVE',
+      back: 'BACK TO MY WORK',
     },
     signal: {
+      address: '37067 Valeggio sul Mincio (VR)',
+      phone: '+39 347 3587524',
+      email: 'bulgarellibru@gmail.com',      
       availability: 'AVAILABLE FOR NEW OPPORTUNITIES.',
       responseTime: 'RESPONSE TIME: < 24HRS.',
-      footer: '© 2024 Bruna Bulgarelli.\nALL RIGHTS RESERVED.',
-      builtWith: 'BUILT WITH LOGIC',
+      footer: '© 2026 Bruna Bulgarelli.\nALL RIGHTS RESERVED.',
+      builtWith: 'BUILT WITH AI',
       categories: {
         NETWORK: 'NETWORK',
         VISUALS: 'VISUALS',
@@ -72,7 +78,7 @@ export const TRANSLATIONS = {
     index: {
       title: 'BRAND\n&\nVisual Designer',
       description: 'Progetto identità visive, packaging, materiali stampati e contenuti digitali per brand, hotel, studi e agenzie che apprezzano qualità e coerenza.',
-      cta: 'VEDI ARCHIVIO',
+      cta: 'VEDI PROGETTI',
       scroll: 'SCORRI PER ESPLORARE',
     },
     timeline: {
@@ -80,24 +86,25 @@ export const TRANSLATIONS = {
       scroll: 'SCORRI PER LE COMPETENZE',
     },
     capabilities: {
-      title: 'STRUMENTI',
+      title: 'COMPETENZE',
       subtitle: 'METODOLOGIE E STACK',
       categories: {
         discipline: '01 — DISCIPLINA',
         tooling: '02 — STRUMENTI',
       },
-      disciplines: ['Direzione Artistica', 'Identità Visiva', 'Design Editoriale', 'Interfaccia Utente', 'Interazione', 'Brand Identity & SEO'],
+      disciplines: ['Brand Identity', 'Identità Visiva', 'Design Editoriale', 'Packaging', 'Web design & SEO', 'Processi di stampa Process'],
       tooling: [
-        'Adobe InDesign, Photoshop, Illustrator, Lightroom, XD',
+        'Adobe InDesign',
+        'Adobe Photoshop',
+        'Adobe Illustrator',
+        'Adobe Lightroom, XD',
         'Canva',
-        'Strumenti AI per creatività e produttività',
-        'Gestione della produzione in stampa digitale e offset',
-        'Design di packaging e POP'
+        'AI tools for creativity, productivity and automation'  
       ],
       quote: 'Precisione, organizzazione e coordinamento del team',
     },
     work: {
-      title: 'ARCHIVIO',
+      title: 'PROGETTI',
       filters: {
         ALL: 'TUTTI',
         IDENTITY: 'IDENTITÀ',
@@ -107,10 +114,13 @@ export const TRANSLATIONS = {
       back: 'TORNA ALL\'ARCHIVIO',
     },
     signal: {
+      address: '37067 Valeggio sul Mincio (VR)',
+      phone: '+39 347 3587524',
+      email: 'bulgarellibru@gmail.com',
       availability: 'DISPONIBILE PER NUOVE OPPORTUNITÀ.',
       responseTime: 'TEMPO DI RISPOSTA: < 24ORE.',
-      footer: '© 2024 Bruna Bulgarelli.\nTUTTI I DIRITTI RISERVATI.',
-      builtWith: 'COSTRUITO CON LOGICA',
+      footer: '© 2026 Bruna Bulgarelli.\nTUTTI I DIRITTI RISERVATI.',
+      builtWith: 'CREATO CON AI',
       categories: {
         NETWORK: 'RETE',
         VISUALS: 'VISUALS',

@@ -29,48 +29,48 @@ export interface Project {
 
 export const EXPERIENCE: Experience[] = [
   {
-    period: "2020 — PRES",
-    role: "Senior Art Director",
-    company: "Pentagram",
+    period: "2024 — PRES",
+    role: "Freelance",
+    company: "Self employed",
     description: {
-      EN: "Leading brand architecture for fintech unicorns. Overseeing a team of 12 designers across 3 timezones. Implementing strict typographic systems for global deployment.",
-      IT: "Guida dell'architettura del marchio per unicorni fintech. Supervisione di un team di 12 designer in 3 fusi orari. Implementazione di rigorosi sistemi tipografici per il deployment globale."
+      EN: "Working on client projects while completing multiple training and certification programs, continuously expanding technical and professional skills.",
+      IT: "Collaborazione su progetti per clienti, parallelamente al completamento di diversi programmi di formazione e certificazione, con continuo sviluppo delle competenze tecniche e professionali.."
     }
   },
   {
-    period: "2018 — 2020",
+    period: "2017 — 2024",
     role: "Lead Designer",
-    company: "Collins",
+    company: "Europlan S.p.A",
     description: {
-      EN: "System design and typographic direction for cultural institutions. Developed the dynamic identity system for the SF Symphony.",
-      IT: "Design di sistema e direzione tipografica per istituzioni culturali. Sviluppato il sistema di identità dinamica per la SF Symphony."
+      EN: "Design and production of graphic and communication materials for the Group’s hotels and residences (brochures, advertising, POP materials, packaging, signage, trade show displays), including the development and implementation of brand identity and logos. Full management of the production process and print suppliers, creation of digital content (web layouts, banners, newsletters, social media assets), and collaboration with the IT department on internal portals, DAM systems, and ticketing platforms.",
+      IT: "Progettazione e realizzazione di materiali grafici e di comunicazione per hotel e residence del Gruppo (brochure, ADV, POP, packaging, segnaletica, allestimenti fieristici), con sviluppo e declinazione di brand identity e loghi. Gestione completa del processo produttivo e dei fornitori di stampa, creazione di contenuti digitali (layout web, banner, newsletter, social) e collaborazione con l’area IT per portali interni, DAM e sistemi di ticketing.."
     }
   },
   {
-    period: "2015 — 2018",
-    role: "Designer",
-    company: "DIA Studio",
+    period: "2014 — 2016",
+    role: "Graphic team leader",
+    company: "Wishdays S.r.l.",
     description: {
-      EN: "Kinetic identity systems and motion graphics. Pioneered the use of variable fonts in web environments before browser support was standard.",
-      IT: "Sistemi di identità cinetica e motion graphics. Pioniere nell'uso di font variabili in ambienti web prima che il supporto dei browser fosse standard."
+      EN: "Coordination of a graphic design team and management of seasonal workloads. Development of POP materials, packaging, gift cards, vouchers, and retail displays, along with the coordination of external agencies for brand and packaging redesign projects. Creation of brand guidelines for multiple Group brands, implementation of automated layout workflows (XML), and management of project and photographic archives.",
+      IT: "Coordinamento di un team grafico e gestione dei carichi di lavoro stagionali. Progettazione di materiali POP, packaging, gift card, voucher e allestimenti retail, con coordinamento di agenzie esterne per progetti di restyling di brand e packaging. Sviluppo e redazione di brand guideline per diversi marchi leader. Implementazione di flussi di impaginazione automatizzata (XML) e gestione degli archivi lavori e fotografici."
     }
   },
   {
-    period: "2014 — 2015",
-    role: "Junior",
-    company: "Bureau Borsche",
+    period: "2012 — 2013",
+    role: "Graphic Designer",
+    company: "Total Quality Food S.r.l.",
     description: {
-      EN: "Editorial design and print production. Responsible for the layout of Zeit Magazin and various art book publications.",
-      IT: "Design editoriale e produzione stampa. Responsabile del layout di Zeit Magazin e di varie pubblicazioni di libri d'arte."
+      EN: "Graphic and regulatory support for food labeling in compliance with EU Regulation 1169, including the design of compliant layouts for packaging and informational materials. Development of commercial materials and graphic support for trade shows, conferences, and events.",
+      IT: "Supporto grafico e normativo per l’etichettatura alimentare in conformità al Regolamento UE 1169, con progettazione di layout per packaging e materiali informativi. Realizzazione di materiali commerciali e supporto grafico per fiere, convegni ed eventi."
     }
   },
   {
-    period: "2012 — 2014",
-    role: "Intern",
-    company: "Experimental Jetset",
+    period: "2005 — 2010",
+    role: "Account Gruppo Pam & Graphic Designer",
+    company: "Verba DDB S.r.l",
     description: {
-      EN: "Research and archival assistance. Learned the fundamental principles of Dutch design and strict grid adherence.",
-      IT: "Ricerca e assistenza d'archivio. Appreso i principi fondamentali del design olandese e la rigorosa aderenza alla griglia."
+      EN: "Management of large-scale retail clients (PAM Group, Panorama), including the design and layout of flyers, promotional brochures, POP materials, internal and external signage. Coordination between clients, agencies, and suppliers, and development of graphic projects for Bata Footwear (advertising materials, window displays, magazines).",
+      IT: "Gestione clienti della GDO (Gruppo PAM, Panorama) con progettazione e impaginazione di volantini, brochure promozionali, materiali POP e segnaletica interna ed esterna. Coordinamento tra cliente, agenzia e fornitori e sviluppo di progetti grafici per Bata Calzature (materiali ADV, vetrine, magazine)."
     }
   }
 ];

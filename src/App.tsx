@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { EXPERIENCE, PROJECTS } from './types';
@@ -219,9 +220,7 @@ function IndexSection({ onNavigate, language, onLanguageChange }: { onNavigate: 
             >
               {t.cta}
             </button>
-            <span className="font-mono text-xs text-slate-400 tracking-widest uppercase">
-              {t.scroll}
-            </span>
+
           </div>
         </div>
       </div>
@@ -266,14 +265,7 @@ function TimelineSection({ language }: { language: Language }) {
           </div>
         ))}
       </div>
-
-      <div className="flex justify-center py-12">
-        <div className="flex flex-col items-center gap-4">
-          <span className="font-mono text-xs text-slate-400 tracking-widest uppercase">{t.scroll}</span>
-          <ArrowDown className="w-6 h-6 text-ink animate-bounce" />
-        </div>
-      </div>
-    </div>
+     </div>
   );
 }
 
@@ -555,9 +547,9 @@ function ImageModal({
 function SignalSection({ language }: { language: Language }) {
   const t = TRANSLATIONS[language].signal;
   const links = [
-    { label: 'LinkedIn', url: '#', category: 'NETWORK' },
-    { label: 'Behance', url: '#', category: 'VISUALS' },
-    { label: 'Read.cv', url: '#', category: 'CURRICULUM' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/bruna-bulgarelli-8a9b7819/', category: 'NETWORK' },
+    { label: 'Behance', url: 'https://www.behance.net/brubulgarelli', category: 'VISUALS' },
+    { label: 'Read.cv', url: 'https://drive.google.com/file/d/1Ew3OMTzji4Hem9kgC9Dyda33ssuK89Wh/view?usp=sharing', category: 'CURRICULUM' },
   ];
 
   return (
@@ -575,6 +567,13 @@ function SignalSection({ language }: { language: Language }) {
           <h2 className="text-3xl md:text-5xl lg:text-3xl font-medium tracking-[0.1em] leading-none text-ink uppercase font-montserrat">
             BRU BULGARELLI
           </h2>
+          <div className="mt-8 font-mono text-xs text-slate-800 tracking-widest space-y-1">
+            <p>{t.address}</p>
+            <p>{t.phone}</p>
+            <p><a href={`mailto:${t.email}`} className="hover:text-primary transition-colors">
+              {t.email}
+            </a></p>
+          </div>
           <div className="mt-8 font-mono text-xs text-slate-400 uppercase tracking-widest space-y-1">
             <p>{t.availability}</p>
             <p>{t.responseTime}</p>
@@ -588,7 +587,7 @@ function SignalSection({ language }: { language: Language }) {
             <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">
               {t.categories[link.category as keyof typeof t.categories] || link.category}
             </span>
-            <a href={link.url} className="text-xl font-bold text-ink hover:text-primary transition-colors flex items-center gap-2">
+            <a href={link.url} target="_blank" rel="noopener noreferrer" className="text-xl font-bold text-ink hover:text-primary transition-colors flex items-center gap-2">
               {link.label}
               <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100" />
             </a>
