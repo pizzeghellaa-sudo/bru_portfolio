@@ -411,7 +411,7 @@ function ProjectDetail({ projectId, onBack, onImageClick, language }: { projectI
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
         <div className="col-span-1 md:col-span-4">
           <div className="w-12 h-0.5 bg-primary mb-8" />
-          <p className="text-xl font-medium leading-tight text-ink">
+          <p className="text-xl font-medium leading-tight text-ink whitespace-pre-line">
             {project.description[language]}
           </p>
           

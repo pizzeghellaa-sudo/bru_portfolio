@@ -78,23 +78,23 @@ export const EXPERIENCE: Experience[] = [
     role: "Professional and Freelance Collaboration",
     company: "Self employed",
     description: {
-      EN: "Editorial design, multilingual layout, technical manuals, promotional materials, and static website design. Collaborations with publishing houses, communication agencies, software companies, and professional training institutes.",
-      IT: "Grafica editoriale, impaginazioni multilingua, manualistica tecnica, materiali promozionali e realizzazione di siti web statici. Collaborazioni con case editrici, agenzie di comunicazione, software house e istituti professionali."
+      EN: "xxxEditorial design, multilingual layout, technical manuals, promotional materials, and static website design. Collaborations with publishing houses, communication agencies, software companies, and professional training institutes.",
+      IT: "xxxGrafica editoriale, impaginazioni multilingua, manualistica tecnica, materiali promozionali e realizzazione di siti web statici. Collaborazioni con case editrici, agenzie di comunicazione, software house e istituti professionali."
     },
   }
 ];
 
 export const PROJECTS: Project[] = [
   {
-    id: "apex",
-    title: "APEX FINANCE",
+    id: "portfolio",
+    title: "PORTFOLIO",
     category: "IDENTITY / SYSTEM",
-    tags: ["FINTECH"],
-    image: projectThumb("apex"),
-    gallery: projectGallery("apex"),
+    tags: ["WEB"],
+    image: projectThumb("portfolio"),
+    gallery: projectGallery("portfolio"),
     description: {
-      EN: "A comprehensive brand identity system for a next-generation fintech platform. The project involved creating a modular design language that scales across mobile, web, and physical touchpoints. We focused on precision, transparency, and high-density information display, drawing inspiration from technical instruments and financial terminals.",
-      IT: "Un sistema completo di identità di marca per una piattaforma fintech di nuova generazione. Il progetto ha comportato la creazione di un linguaggio di design modulare che scala su mobile, web e punti di contatto fisici. Ci siamo concentrati su precisione, trasparenza e visualizzazione di informazioni ad alta densità, traendo ispirazione da strumenti tecnici e terminali finanziari."
+      EN: "Personal portfolio creation:\n\n1. Ideation — defined the purpose, audience, and goals.\n\n2. Structure — mapped the pages and navigation (site architecture).\n\n3. Wireframe — sketch page layouts and user flows.\n\n4. Design — created visual style, typography, and UI components using Sticth AI. Interactive session starting from a prompt and improving all the visual elements.\n\n5. Build & Launch — developed the site using AI and Gemini Flash 3.0 (Vite, React.js). Repeated cycles to  add functionalities then committed to GitHub and finally automated the deployment using Vercel.",
+      IT: "Creazione portfolio personale:\n\n1. Ideazione — definizione di scopo, pubblico e obiettivi.\n\n2. Struttura — mappatura delle pagine e della navigazione (architettura del sito).\n\n3. Wireframe — schizzi dei layout delle pagine e dei flussi utente.\n\n4. Design — creazione dello stile visivo, della tipografia e dei componenti UI utilizzando Stitch AI. Sessione interattiva partita da un prompt e miglioramento progressivo di tutti gli elementi visivi.\n\n5. Sviluppo e lancio — sviluppo del sito utilizzando AI e Gemini Flash 3.0 (Vite, React.js). Cicli iterativi per aggiungere funzionalità, commit su GitHub e infine deploy automatizzato tramite Vercel."
     }
 	
   },
