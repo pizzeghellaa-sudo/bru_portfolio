@@ -105,7 +105,6 @@ export const PROJECTS: Project[] = [
       EN: "Personal website creation:\n\n1. Ideation — defined the purpose, audience, and goals.\n\n2. Structure — mapped the pages and navigation (site architecture).\n\n3. Wireframe — sketch page layouts and user flows.\n\n4. Design — created visual style, typography, and UI components using Sticth AI. Interactive session starting from a prompt and improving all the visual elements.\n\n5. Build & Launch — developed the site using AI and Gemini 3 Flash (Vite, React.js). Repeated cycles to  add functionalities then committed to GitHub and finally automated the deployment using Vercel.",
       IT: "Creazione sito web personale:\n\n1. Ideazione — definizione di scopo, pubblico e obiettivi.\n\n2. Struttura — mappatura delle pagine e della navigazione (architettura del sito).\n\n3. Wireframe — schizzi dei layout delle pagine e dei flussi utente.\n\n4. Design — creazione dello stile visivo, della tipografia e dei componenti UI utilizzando Stitch AI. Sessione interattiva partita da un prompt e miglioramento progressivo di tutti gli elementi visivi.\n\n5. Sviluppo e lancio — sviluppo del sito utilizzando AI e Gemini 3 Flash (Vite, React.js). Cicli iterativi per aggiungere funzionalità, commit su GitHub e infine deploy automatizzato tramite Vercel."
     }
-	
   },
   {
     id: "caesius",
@@ -115,11 +114,11 @@ export const PROJECTS: Project[] = [
     image: projectThumb("caesius"),
 	  gallery: projectGallery("caesius"),
     description: {
-      EN: "Design and development of a cloud-based infrastructure monitoring tool. The challenge was to make complex data scannable and actionable for DevOps engineers. We implemented a dark-mode first interface with high-contrast accents to highlight critical system alerts and performance metrics.",
-      IT: "Design e sviluppo di uno strumento di monitoraggio dell'infrastruttura basato su cloud. La sfida era rendere i dati complessi scansionabili e azionabili per gli ingegneri DevOps. Abbiamo implementato un'interfaccia dark-mode first con accenti ad alto contrasto per evidenziare gli avvisi critici del sistema e le metriche di performance."
+      EN: "Project created for Europlan SpA – Affi (VR).\nThe brand book defines and organizes the visual identity of Hotel Caesius Thermae & SPA Resort, a mid-high level hotel on Lake Garda and a reference point for hospitality, wellness, and business.\nFrom the brand essence — elegance, refinement and well-being — a coherent visual style is developed, starting from the main logo to the versions for the SPA, Congress Center and thermal line.\nEach element has clear rules to ensure consistency and recognition across all touchpoints.",
+      IT: "Progetto realizzato per conto di Europlan SpA – Affi (VR).\nIl brand book definisce e organizza l’identità visiva di Hotel Caesius Thermae & SPA Resort, struttura di fascia medio-alta sul Lago di Garda e punto di riferimento per ospitalità, benessere e business.\nDall’essenza del brand — eleganza, raffinatezza e benessere — prende forma un linguaggio visivo coerente che si sviluppa dal logo istituzionale fino alle declinazioni dedicate a SPA, Congress Center e linea termale.\nOgni elemento è stato regolamentato per assicurare coerenza e riconoscibilità su tutti i touchpoint."
     }
   },
-    {
+  {
     id: "emozione3",
     title: "Emozione3 Brand Book",
     category: "BRANDING",
@@ -127,11 +126,23 @@ export const PROJECTS: Project[] = [
     image: projectThumb("emozione3"),
     gallery: projectGallery("emozione3"),
     description: {
-      EN: "A minimalist rebranding for a sustainable architecture firm. The identity is built around a custom monospace typeface and a palette of recycled materials. The goal was to communicate structural integrity and environmental responsibility without relying on traditional 'green' tropes.",
-      IT: "Un rebranding minimalista per uno studio di architettura sostenibile. L'identità è costruita attorno a un carattere monospace personalizzato e una palette di materiali riciclati. L'obiettivo era comunicare integrità strutturale e responsabilità ambientale senza fare affidamento sui tradizionali tropi 'green'."
+      EN: "Project developed for Wish Days S.r.l. (Verona).\nThis brand book was created for the rebranding of Emozione3, an Italian gift box company.\nThe goal was to strengthen the brand and increase its value during an important moment of its journey.\nThe new visual identity defines clear rules for the logo, tone of voice, and brand applications, expressing the core idea of Emozione3: a gift that contains happiness, made to turn a weekend into a special experience.\nThis project was a meaningful collaboration for me and an important step in my professional growth.",
+      IT: "Progetto realizzato per Wish Days S.r.l. (Verona)\nIl brand book nasce in occasione del rebranding di Emozione3, storico player italiano nel settore dei cofanetti regalo.\n L’obiettivo strategico era rafforzare il posizionamento e aumentare il valore percepito del brand in una fase cruciale della sua evoluzione.\n Il nuovo sistema di identità definisce linee guida chiare e coerenti per logo, tono di voce e applicazioni, valorizzando l’essenza di Emozione3: un regalo che contiene felicità, pensato per trasformare un weekend in un ricordo.\nÈ stato un progetto intenso e stimolante, sviluppato all’interno di un team competente e determinato, che ha rappresentato per me un’importante occasione di crescita professionale e umana."
     }
-   },
-   {
+  },
+  {
+    id: "nettuno",
+    title: "Hotel Nettuno paintings",
+    category: "PAINTINSG / PRINT",
+    tags: ["PRINT"],
+    image: projectThumb("nettuno"),
+    gallery: projectGallery("nettuno"),
+    description: {
+      EN: "Project developed for Europlan SpA, Affi, in collaboration with Architect Luca Pomponio, Bardolino.\nFor Hotel Nettuno, I designed and created a series of cardboard artworks inspired by the view of Lake Garda.\nThe illustrations are made in a simple and clean vector style.\nThe project includes three formats — square, horizontal, and vertical — created to fit different spaces inside the hotel and to create visual harmony.\nTo respect the environment, the artworks were made in cardboard and finished with a transparent protective varnish. The result is light, sustainable, and elegant. This project turns decoration into a visual story, connecting the hotel with the lake and its atmosphere.",
+      IT: "Progetto realizzato per conto di Europlan SpA, Affi, in collaborazione con l’Architetto Luca Pomponio, Bardolino.\nPer l’Hotel Nettuno ho progettato e realizzato una serie di quadri cartonati ispirati alla vista del Lago di Garda, reinterpretata attraverso una grafica vettoriale stilizzata ed essenziale.\nIl sistema si sviluppa in tre formati — quadrato, orizzontale e verticale — pensati per adattarsi armoniosamente agli spazi della struttura, creando continuità visiva e un dialogo diretto con il territorio.\nIn coerenza con un approccio attento all’ambiente, le opere sono state realizzate in cartone e rifinite con vernice trasparente spessorata, unendo leggerezza, sostenibilità e cura del dettaglio.Un progetto che trasforma l’elemento decorativo in racconto visivo, valorizzando identità, luogo e atmosfera."
+    }
+  },
+  {
     id: "culture",
     title: "CULTURE LAB",
     category: "EDITORIAL / PRINT",
