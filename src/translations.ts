@@ -6,19 +6,19 @@ export const TRANSLATIONS = {
   EN: {
     nav: {
       INDEX: 'INDEX',
-      TIMELINE: 'TIMELINE',
+      TIMELINE: 'EXPERIENCE',
       CAPABILITIES: 'CAPABILITIES',
-      WORK: 'WORK',
+      WORK: 'SELECTED WORK',
       CONTACTS: 'CONTACTS',
     },
     index: {
       title: 'BRAND\n&\nVisual Designer',
-      description: 'I design visual identities, packaging, printed materials and digital contents for brands, hotels, studios, and agencies that value quality and consistency.',
-      cta: 'MY WORK',
+      description: 'I design brand identities and visual systems for hospitality, cultural and commercial brands, translating strategy into cohesive visual experiences across print and digital.',
+      cta: 'Selected Work',
       scroll: 'SCROLL TO EXPLORE',
     },
     timeline: {
-      title: 'TIMELINE',
+      title: 'EXPERIENCE',
       subtitle: 'PAST & PRESENT',
       scroll: 'SCROLL FOR CAPABILITIES',
     },
@@ -41,7 +41,7 @@ export const TRANSLATIONS = {
       quote: 'Precision, organization, and team coordination',
     },
     work: {
-      title: 'WORK',
+      title: 'SELECTED WORK',
       subtitle: 'PORTFOLIO',
       filters: {
         ALL: 'ALL',
@@ -72,19 +72,19 @@ export const TRANSLATIONS = {
   IT: {
     nav: {
       INDEX: 'INDICE',
-      TIMELINE: 'CRONOLOGIA',
+      TIMELINE: 'ESPERIENZA',
       CAPABILITIES: 'COMPETENZE',
-      WORK: 'PROGETTI',
+      WORK: 'LAVORI SELEZIONATI',
       CONTACTS: 'CONTATTI',
     },
     index: {
       title: 'BRAND\n&\nVisual Designer',
-      description: 'Progetto identità visive, packaging, materiali stampati e contenuti digitali per brand, hotel, studi e agenzie che apprezzano qualità e coerenza.',
-      cta: 'VEDI PROGETTI',
+      description: 'Progetto identità di marca e sistemi visivi per brand nel settore dell’ospitalità, culturale e commerciale, traducendo la strategia in esperienze visive coerenti su stampa e digitale.',
+      cta: 'Lavori selezionati',
       scroll: 'SCORRI PER ESPLORARE',
     },
     timeline: {
-      title: 'CRONOLOGIA',
+      title: 'ESPERIENZA',
       subtitle: 'PASSATO E PRESENTE',
       scroll: 'SCORRI PER LE COMPETENZE',
     },
@@ -107,7 +107,7 @@ export const TRANSLATIONS = {
       quote: 'Precisione, organizzazione e coordinamento del team',
     },
     work: {
-      title: 'PROGETTI',
+      title: 'LAVORI SELEZIONATI',
         subtitle: 'PORTFOLIO',
         filters: {
         ALL: 'TUTTI',
