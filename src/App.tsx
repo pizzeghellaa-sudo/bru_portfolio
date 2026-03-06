@@ -530,7 +530,7 @@ function ImageModal({
   const dragStart = useRef({ x: 0, y: 0, scrollLeft: 0, scrollTop: 0 });
 
   const zoomIn = () => setZoom(z => Math.min(z + 0.25, 3));
-  const zoomOut = () => setZoom(z => Math.max(z - 0.25, 0.25));
+  const zoomOut = () => setZoom(z => Math.max(z - 0.25, 1));
   const zoomReset = () => setZoom(1);
 
   // Reset zoom and natural size when image changes
