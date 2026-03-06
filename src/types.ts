@@ -141,18 +141,7 @@ export const PROJECTS: Project[] = [
       EN: "Project developed for Europlan SpA, Affi, in collaboration with Architect Luca Pomponio, Bardolino.\nFor Hotel Nettuno, I designed and created a series of cardboard artworks inspired by the view of Lake Garda.\nThe illustrations are made in a simple and clean vector style.\nThe project includes three formats — square, horizontal, and vertical — created to fit different spaces inside the hotel and to create visual harmony.\nTo respect the environment, the artworks were made in cardboard and finished with a transparent protective varnish. The result is light, sustainable, and elegant. This project turns decoration into a visual story, connecting the hotel with the lake and its atmosphere.",
       IT: "Progetto realizzato per conto di Europlan SpA, Affi, in collaborazione con l’Architetto Luca Pomponio, Bardolino.\nPer l’Hotel Nettuno ho progettato e realizzato una serie di quadri cartonati ispirati alla vista del Lago di Garda, reinterpretata attraverso una grafica vettoriale stilizzata ed essenziale.\nIl sistema si sviluppa in tre formati — quadrato, orizzontale e verticale — pensati per adattarsi armoniosamente agli spazi della struttura, creando continuità visiva e un dialogo diretto con il territorio.\nIn coerenza con un approccio attento all’ambiente, le opere sono state realizzate in cartone e rifinite con vernice trasparente spessorata, unendo leggerezza, sostenibilità e cura del dettaglio.Un progetto che trasforma l’elemento decorativo in racconto visivo, valorizzando identità, luogo e atmosfera."
     }
-  },
-  {
-    id: "culture",
-    title: "CULTURE LAB",
-    category: "EDITORIAL / PRINT",
-    tags: ["CULTURE"],
-    image: projectThumb("culture"),
-    gallery: projectGallery("culture"),
-    description: {
-      EN: "An experimental publication exploring the intersection of technology and contemporary art. The design uses a rigid 12-column grid and oversized typography to create a sense of architectural space on the page. Each issue features custom-developed generative patterns that respond to the featured artist's work.",
-      IT: "Una pubblicazione sperimentale che esplora l'intersezione tra tecnologia e arte contemporanea. Il design utilizza una rigida griglia a 12 colonne e una tipografia sovradimensionata per creare un senso di spazio architettonico sulla pagina. Ogni numero presenta pattern generativi sviluppati su misura che rispondono al lavoro dell'artista presentato."
-    }
   }
+
 ];
 
