@@ -563,6 +563,14 @@ function ImageModal({
     containerRef.current?.releasePointerCapture(e.pointerId);
   }, []);
 
+  const handleWheel = useCallback((e: React.WheelEvent) => {
+    e.preventDefault();
+    setZoom(z => {
+      const delta = e.deltaY > 0 ? -0.1 : 0.1;
+      return Math.min(Math.max(z + delta, 1), 3);
+    });
+  }, []);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight') onNext();
@@ -668,6 +676,7 @@ function ImageModal({
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerUp}
+        onWheel={handleWheel}
       >
         <motion.img
           ref={imgRef}
