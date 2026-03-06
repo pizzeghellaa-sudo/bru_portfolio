@@ -19,7 +19,7 @@ export const TRANSLATIONS = {
     },
     timeline: {
       title: 'EXPERIENCE',
-      subtitle: 'PAST & PRESENT',
+      subtitle: 'PROFESSIONAL EXPERIENCE',
       scroll: 'SCROLL FOR CAPABILITIES',
     },
     capabilities: {
@@ -29,7 +29,7 @@ export const TRANSLATIONS = {
         discipline: '01 — DISCIPLINE',
         tooling: '02 — TOOLING',
       },
-      disciplines: ['Brand Identity', 'Visual Identity', 'Editorial Design', 'Packaging', 'Web design & SEO', 'Print Process'],
+      disciplines: ['Brand Identity', 'Visual Systems', 'Editorial Design', 'Packaging', 'Web & Digital Design', 'Print Production'],
       tooling: [
         'Adobe InDesign',
         'Adobe Photoshop',
@@ -38,7 +38,7 @@ export const TRANSLATIONS = {
         'Canva',
         'AI tools for creativity, productivity and automation'        
       ],
-      quote: 'Precision, organization, and team coordination',
+      quote: 'Precision, structured workflows and team coordination',
     },
     work: {
       title: 'SELECTED WORK',
@@ -85,7 +85,7 @@ export const TRANSLATIONS = {
     },
     timeline: {
       title: 'ESPERIENZA',
-      subtitle: 'PASSATO E PRESENTE',
+      subtitle: 'ESPERIENZE PROFESSIONALI',
       scroll: 'SCORRI PER LE COMPETENZE',
     },
     capabilities: {
@@ -95,16 +95,16 @@ export const TRANSLATIONS = {
         discipline: '01 — DISCIPLINA',
         tooling: '02 — STRUMENTI',
       },
-      disciplines: ['Brand Identity', 'Identità Visiva', 'Design Editoriale', 'Packaging', 'Web design & SEO', 'Processi di stampa'],
+      disciplines: ['Brand Identity', 'Sistemi Visivi', 'Design Editoriale', 'Packaging', 'Web e Digitale', 'Processi di stampa'],
       tooling: [
         'Adobe InDesign',
         'Adobe Photoshop',
         'Adobe Illustrator',
-        'Adobe Lightroom, XD',
+        'Adobe Lightroom',
         'Canva',
-        'AI tools for creativity, productivity and automation'  
+        'AI-assisted tools for creative workflows and automation'  
       ],
-      quote: 'Precisione, organizzazione e coordinamento del team',
+      quote: 'Precisione, flussi di lavoro strutturati e coordinamento del team',
     },
     work: {
       title: 'LAVORI SELEZIONATI',
