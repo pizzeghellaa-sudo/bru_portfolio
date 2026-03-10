@@ -94,7 +94,18 @@ export const EXPERIENCE: Experience[] = [
 ];
 
 export const PROJECTS: Project[] = [
-  {
+ {
+    id: "europlan",
+    title: "Europlan S.p.A. - Graphic Design",
+    category: "BRANDING / PRINT",
+    tags: ["PRINT"],
+    image: projectThumb("europlan"),
+	  gallery: projectGallery("europlan"),
+    description: {
+      EN: "For over ten years I worked in the design department of Europlan, a leading hospitality group on Lake Garda serving an international market. I developed graphic and editorial communication materials for multiple properties, including promotional campaigns, trade-fair assets, and printed collateral.\n\nMy role covered graphic design, editorial layout, photo post-production, and retouching, as well as the design of visual communication systems and wayfinding across hospitality, wellness, events, and business contexts.",
+      IT: "Per oltre dieci anni ho lavorato nel reparto grafico di Europlan, realtà turistica di riferimento sul Lago di Garda con un pubblico internazionale. Ho sviluppato materiali di comunicazione grafica ed editoriale per diverse strutture del gruppo, tra cui campagne promozionali, materiali per fiere e supporti stampati.\n\nIl mio ruolo comprendeva graphic design, impaginazione editoriale, post-produzione fotografica e fotoritocco, oltre alla progettazione di sistemi di comunicazione visiva e wayfinding applicati ai contesti di ospitalità, wellness, eventi e business."
+    }
+  },  {
     id: "caesius",
     title: "Hotel Caesius Brand Book",
     category: "BRANDING",
