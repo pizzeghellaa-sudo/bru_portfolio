@@ -130,6 +130,18 @@ export const PROJECTS: Project[] = [
     }
   },
   {
+    id: "ilmarmo",
+    title: "IlMarmo brochure",
+    category: "BRANDING",
+    tags: ["BRANDING"],
+    image: projectThumb("ilmarmo"),
+    gallery: projectGallery("ilmarmo"),
+    description: {
+      EN: "Il Marmo ....",
+      IT: "Il Marmo ...."
+    }
+  },  
+  {
     id: "nettuno",
     title: "Hotel Nettuno paintings",
     category: "PAINTINSG / PRINT",
