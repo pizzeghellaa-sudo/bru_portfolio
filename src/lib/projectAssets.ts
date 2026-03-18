@@ -14,5 +14,9 @@ export const projectThumb = (id: string) => ASSETS[`${id}/thumb.jpg`];
 export const projectGallery = (id: string): GalleryItem[] =>
   Object.keys(ASSETS)
     .filter(k => k?.startsWith(`${id}/`) && k.includes("-thumb"))
-    .sort()
+    .sort((a, b) => {
+      const na = parseInt(a.split("/").pop()!);
+      const nb = parseInt(b.split("/").pop()!);
+      return na - nb;
+    })
     .map(k => ({ thumb: ASSETS[k], full: ASSETS[k.replace("-thumb", "-full")] }));
