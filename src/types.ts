@@ -96,7 +96,7 @@ export const EXPERIENCE: Experience[] = [
 export const PROJECTS: Project[] = [
  {
     id: "europlan",
-    title: "Europlan S.p.A. - Graphic Design",
+    title: "Europlan",
     category: "BRANDING / PRINT",
     tags: ["PRINT"],
     image: projectThumb("europlan"),
@@ -131,7 +131,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "ilmarmo",
-    title: "IlMarmo brochure",
+    title: "Il Marmo Brochure",
     category: "BRANDING",
     tags: ["BRANDING"],
     image: projectThumb("ilmarmo"),
@@ -143,7 +143,7 @@ export const PROJECTS: Project[] = [
   },  
   {
     id: "nettuno",
-    title: "Hotel Nettuno paintings",
+    title: "Hotel Nettuno Paintings",
     category: "PAINTINSG / PRINT",
     tags: ["PRINT"],
     image: projectThumb("nettuno"),
@@ -155,7 +155,7 @@ export const PROJECTS: Project[] = [
   },
  {
     id: "website",
-    title: "Personal site",
+    title: "Personal Website",
     category: "UI / UX / PRODUCT",
     tags: ["WEB"],
     image: projectThumb("portfolio"),
