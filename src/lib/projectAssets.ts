@@ -5,11 +5,19 @@ const files = import.meta.glob("../assets/projects/**/*.{jpg,jpeg,png,webp,avif}
   import: "default",
 }) as Record<string, string>;
 
+const videoFiles = import.meta.glob("../assets/projects/**/*.mp4", {
+  eager: true,
+  import: "default",
+}) as Record<string, string>;
+
 const key = (p: string) => p.replace(/\\/g, "/").split("/assets/projects/")[1];
 
 const ASSETS = Object.fromEntries(Object.entries(files).map(([p, url]) => [key(p), url]));
+const VIDEO_ASSETS = Object.fromEntries(Object.entries(videoFiles).map(([p, url]) => [key(p), url]));
 
 export const projectThumb = (id: string) => ASSETS[`${id}/thumb.jpg`];
+
+export const projectVideo = (id: string, filename: string) => VIDEO_ASSETS[`${id}/${filename}`];
 
 export const projectGallery = (id: string): GalleryItem[] =>
   Object.keys(ASSETS)

@@ -423,13 +423,33 @@ function WorkSection({ onSelectProject, language }: { onSelectProject: (id: stri
               <div className="flex justify-between font-mono text-[10px] text-slate-400 uppercase tracking-widest">
                 <span>{project.id} — {project.tags[0]}</span>
               </div>
-              <div className="aspect-[4/3] overflow-hidden bg-paper relative">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                  referrerPolicy="no-referrer"
-                />
+              <div className="aspect-[16/9] overflow-hidden bg-paper relative">
+                {project.video ? (
+                  <video
+                    src={project.video}
+                    muted
+                    playsInline
+                    onLoadedData={(e) => {
+                      const video = e.currentTarget;
+                      setTimeout(() => video.play().catch(() => {}), 3000);
+                    }}
+                    onEnded={(e) => {
+                      const video = e.currentTarget;
+                      setTimeout(() => {
+                        video.currentTime = 0;
+                        video.play().catch(() => {});
+                      }, 3000);
+                    }}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                  />
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                    referrerPolicy="no-referrer"
+                  />
+                )}
                 <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors" />
               </div>
               <div>
