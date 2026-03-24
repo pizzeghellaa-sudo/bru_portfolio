@@ -431,14 +431,14 @@ function WorkSection({ onSelectProject, language }: { onSelectProject: (id: stri
                     playsInline
                     onLoadedData={(e) => {
                       const video = e.currentTarget;
-                      setTimeout(() => video.play().catch(() => {}), 3000);
+                      setTimeout(() => video.play().catch(() => {}), 2000);
                     }}
                     onEnded={(e) => {
                       const video = e.currentTarget;
                       setTimeout(() => {
                         video.currentTime = 0;
                         video.play().catch(() => {});
-                      }, 3000);
+                      }, 5000);
                     }}
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                   />
