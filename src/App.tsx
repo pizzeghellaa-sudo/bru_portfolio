@@ -423,7 +423,7 @@ function WorkSection({ onSelectProject, language }: { onSelectProject: (id: stri
               <div className="flex justify-between font-mono text-[10px] text-slate-400 uppercase tracking-widest">
                 <span>{project.id} — {project.tags[0]}</span>
               </div>
-              <div className="aspect-[16/9] overflow-hidden bg-paper relative">
+              <div className="aspect-[4/3] overflow-hidden bg-paper relative">
                 {project.video ? (
                   <video
                     src={project.video}
