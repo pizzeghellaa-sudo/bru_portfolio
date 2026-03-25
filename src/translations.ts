@@ -8,7 +8,7 @@ export const TRANSLATIONS = {
       INDEX: 'INDEX',
       TIMELINE: 'EXPERIENCE',
       CAPABILITIES: 'CAPABILITIES',
-      WORK: 'SELECTED WORK',
+      WORK: 'SELECTED WORKS',
       CONTACTS: 'CONTACTS',
     },
     index: {
@@ -41,7 +41,7 @@ export const TRANSLATIONS = {
       quote: 'Precision, structured workflows and team coordination',
     },
     work: {
-      title: 'SELECTED WORK',
+      title: 'SELECTED WORKS',
       subtitle: 'PORTFOLIO',
       filters: {
         ALL: 'ALL',

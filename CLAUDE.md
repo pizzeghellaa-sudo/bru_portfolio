@@ -36,7 +36,8 @@ assets/
   bru.png
   projects/
     <project-id>/
-      thumb.jpg         # Archive grid thumbnail
+      thumb.jpg         # Archive grid thumbnail (used if no video)
+      <filename>.mp4    # Optional video thumbnail (overrides thumb.jpg in grid)
       <n>-thumb.jpg     # Gallery list thumbnails
       <n>-full.jpg      # Zoom modal high-res images
 ```
@@ -50,11 +51,24 @@ assets/
 `Language` type is `'EN' | 'IT'`. `language` state in `App.tsx` controls which strings are displayed. All UI strings come from `TRANSLATIONS[language]` in `translations.ts`. Content strings on data objects (descriptions in `types.ts`) use `{ EN: string; IT: string }` shape and are accessed as `item.description[language]`.
 
 ### Dynamic Asset Loading
-`src/lib/projectAssets.ts` uses `import.meta.glob` to eagerly import all images under `assets/projects/`. Two helpers:
+`src/lib/projectAssets.ts` uses `import.meta.glob` to eagerly import all images and videos under `assets/projects/`. Three helpers:
 - `projectThumb(id)` — returns `assets/projects/<id>/thumb.jpg`
 - `projectGallery(id)` — returns `{ thumb, full }[]` pairs built from `<n>-thumb.jpg` / `<n>-full.jpg` naming convention
+- `projectVideo(id, filename)` — returns `assets/projects/<id>/<filename>.mp4` (separate glob for `.mp4` files)
 
-To add a new project: create `assets/projects/<id>/` with a `thumb.jpg` and numbered `<n>-thumb.jpg` + `<n>-full.jpg` pairs, then add a `Project` entry in `types.ts`.
+To add a new project: create `assets/projects/<id>/` with a `thumb.jpg` and numbered `<n>-thumb.jpg` + `<n>-full.jpg` pairs, then add a `Project` entry in `types.ts`. Optionally include a `.mp4` file and set the `video` field to `projectVideo(id, filename)`.
+
+### Video Thumbnails
+The `Project` interface has an optional `video?: string` field. When set, the Work grid renders a `<video>` element instead of `<img>` for that project card:
+- Auto-plays (muted, no controls) with a **2-second delay** on first load via `onLoadedData` + `setTimeout`
+- Loops with a **5-second pause** between iterations via `onEnded` + `setTimeout` + `video.currentTime = 0`
+- No `autoPlay` or `loop` attributes — timing is fully controlled via event handlers
+
+### Image Zoom Modal
+The gallery image modal (`ImageModal` in `App.tsx`) supports zoom from 1×–3× via:
+- Mousewheel (cursor-centered: zoom anchors to the point under the cursor using `getBoundingClientRect` fractions + `requestAnimationFrame` scroll adjustment)
+- `+`/`-` buttons and keyboard shortcuts
+- Uses explicit pixel dimensions (`width: naturalWidth * zoom`) inside an `overflow: auto` scroll container — NOT CSS `transform: scale`
 
 ### Animations
 Uses `motion` from `motion/react` (Framer Motion v12). `AnimatePresence` wraps section transitions. Standard pattern: `<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>`.
