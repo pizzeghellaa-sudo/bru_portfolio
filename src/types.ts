@@ -164,8 +164,8 @@ export const PROJECTS: Project[] = [
     image: projectThumb("ilmarmo"),
     gallery: projectGallery("ilmarmo"),
     description: {
-      EN: "Il Marmo ....",
-      IT: "Il Marmo ...."
+      EN: "Editorial Project — Marble Company\n\nDesign of a corporate brochure for a marble company, aimed at conveying a more contemporary and authoritative image while highlighting technical expertise and production complexity.\n\nThe project develops a clean, process-driven visual narrative, from raw material selection to advanced manufacturing and installation, supported by a curated gallery of high-end architectural applications.\n\nA refined color palette and premium print production (CMYK with Pantone inks) enhance the design, with an embossed metallic cover where stone names become a distinctive typographic element.\n\nThe result is an elegant, timeless editorial piece that translates technical know-how into a clear and sophisticated visual story.",
+      IT: "Progetto editoriale — Azienda settore marmo\n\nDesign di una brochure istituzionale per un’azienda del settore marmo, pensata per esprimere un’immagine contemporanea e autorevole, valorizzando know-how e complessità produttiva.\n\nIl progetto sviluppa una narrazione visiva essenziale, centrata sul processo, dalla selezione della materia prima alle lavorazioni e installazione, affiancata da una gallery di applicazioni architettoniche di alto profilo.\n\nPalette raffinata e stampa di pregio (quadricromia con Pantoni) definiscono il linguaggio visivo, mentre la copertina introduce un segno distintivo: i nomi delle pietre impressi a rilievo su fondo metallizzato.\n\nIl risultato è un oggetto editoriale elegante e senza tempo, capace di tradurre la competenza tecnica in un racconto visivo chiaro e sofisticato."
     }
   },  
   {
