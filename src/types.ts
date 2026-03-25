@@ -96,6 +96,18 @@ export const EXPERIENCE: Experience[] = [
 
 export const PROJECTS: Project[] = [
  {
+    id: "emozione3-pop",
+    title: "Emozione3 pop",
+    category: "BRANDING / PRINT",
+    tags: ["PRINT"],
+    image: projectThumb("emozione3-pop"),
+    gallery: projectGallery("emozione3-pop"),
+    description: {
+      EN: "Gift Boxes.\nDesign and development of POP materials for retail, with a focus on seasonal displays, co-marketing initiatives, and new product and bundle launches.\n\nProjects were delivered across various retail environments (shopping malls, bookstores, large-scale retail, travel agencies), adapting solutions and visual language to specific spaces and needs.\n\nFrom floor displays to coordinated communication materials (posters, leaflets, shelves, stoppers, counter displays, and backlit walls), a consistent and recognizable visual system was created.\n\nA valuable experience that allowed me to grow in diverse, fast-paced environments, with direct visibility of results at the point of sale.",
+      IT: "Cofanetti regalo.\nProgettazione e sviluppo di materiali POP per il punto vendita, con focus su allestimenti stagionali, co-marketing e lanci di nuovi prodotti e bundle.\n\nI progetti sono stati realizzati in diversi contesti retail (centri commerciali, librerie, GDO, agenzie viaggio), adattando soluzioni e linguaggi agli spazi e alle esigenze specifiche.\n\nDagli espositori da terra ai materiali coordinati (locandine, leaflet, mensole, stopper, espositori da banco e wall retroilluminati), è stato costruito un sistema visivo coerente e riconoscibile.\n\nUn’esperienza formativa che mi ha permesso di crescere in contesti diversi e ad alto ritmo, con un riscontro diretto sul punto vendita."
+    }
+  }, 
+  {
     id: "kalika",
     title: "Kalika",
     category: "BRANDING / PRINT",
