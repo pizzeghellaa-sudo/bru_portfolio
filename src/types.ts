@@ -116,8 +116,8 @@ export const PROJECTS: Project[] = [
     video: projectVideo("kalika", "kalika_logo_animate.mp4"),
 	  gallery: projectGallery("kalika"),
     description: {
-      EN: "kalika.",
-      IT: "kalika."
+      EN: "Kalika Branding Project\n\nThe branding project reflects the identity of the two young entrepreneurs: dynamic, feminine and approachable, with a careful and professional approach.\n\nAt the center of the visual system there is a versatile and easily recognizable logo, developed in a young and bright color palette, designed to communicate freshness, energy and positivity across all touchpoints.\n\nThe window graphic also helps to strengthen the brand presence and recognition over time in the urban space.",
+      IT: "Progetto di Branding Kalika\n\nIl progetto di branding riflette l’identità delle due giovani imprenditrici: dinamica, femminile e accessibile, unita a un approccio sempre curato e professionale.\n\nAl centro del sistema visivo si trova un logo versatile e immediatamente riconoscibile, declinato in una palette cromatica giovane e vivace, pensata per trasmettere freschezza, energia e positività su ogni touchpoint.\n\nAnche la vetrofania contribuisce a rafforzare nel tempo la presenza e la riconoscibilità del brand nello spazio urbano."
     }
   },
   {
