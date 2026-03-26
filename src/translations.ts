@@ -47,6 +47,7 @@ export const TRANSLATIONS = {
         ALL: 'ALL',
         IDENTITY: 'IDENTITY',
         DIGITAL: 'DIGITAL',
+        POP: 'POP',
         PRINT: 'PRINT',
       },
       back: 'BACK TO MY WORK',

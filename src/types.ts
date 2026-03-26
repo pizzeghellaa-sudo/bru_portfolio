@@ -95,11 +95,22 @@ export const EXPERIENCE: Experience[] = [
 ];
 
 export const PROJECTS: Project[] = [
- {
-    id: "emozione3-pop",
-    title: "Emozione3 pop",
-    category: "BRANDING / PRINT",
-    tags: ["PRINT"],
+  {
+    id: "pam panorama",
+    title: "In-Store promotion",
+    category: "PRINT-POP",
+    tags: ["PRINT/POP"],
+    image: projectThumb("pam-panorama"),
+    gallery: projectGallery("pam-panorama"),
+    description: {
+      EN: "At Verba DDB (Verona) I worked with retail clients like Panorama, Pam and Bata, doing coordination and creative work.\n\nI managed communication between client and agency, working with design, photography and production. I also followed photo shoots for products and fashion.\n\nI also worked as a graphic designer on promotions, in-store materials and new store openings.\n\nThis experience made me flexible, precise and organized, able to understand needs and create clear visual solutions for customers.",
+      IT: "In Verba DDB (Verona) ho lavorato su clienti retail strutturati come Panorama (Gruppo Pam), Pam e Bata, muovendomi tra coordinamento e progettazione creativa.\n\ Come Account ho gestito il dialogo tra cliente e agenzia, orchestrando flussi complessi tra grafica, fotografia e produzione.\n\nHo seguito da vicino anche la parte fotografica, dagli shooting prodotto per la GDO agli indossati, costruendo un linguaggio visivo coerente e accessibile.\n\nParallelamente, ho sviluppato il mio ruolo come grafica, lavorando su campagne promozionali, comunicazione in-store e nuove aperture, adattando ogni progetto al contesto e al target. Un’esperienza che mi ha portata a essere flessibile, precisa e organizzata, capace di entrare nel merito dei progetti e tradurre esigenze diverse in soluzioni visive efficaci, sempre con uno sguardo attento al consumatore finale."
+    }
+  }, {
+    id: "emozione3 pop",
+    title: "Emozione3 Pop",
+    category: "PRINT",
+    tags: ["PRINT/POP"],
     image: projectThumb("emozione3-pop"),
     gallery: projectGallery("emozione3-pop"),
     description: {

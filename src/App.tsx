@@ -369,12 +369,13 @@ function CapabilitiesSection({ language }: { language: Language }) {
 function WorkSection({ onSelectProject, language }: { onSelectProject: (id: string) => void, language: Language }) {
   const [filter, setFilter] = useState('ALL');
   const t = TRANSLATIONS[language].work;
-  const filters = ['ALL', 'IDENTITY', 'DIGITAL', 'PRINT'] as const;
+  const filters = ['ALL', 'IDENTITY', 'DIGITAL', 'POP',  'PRINT'] as const;
 
   const filteredProjects = PROJECTS.filter(project => {
     if (filter === 'ALL') return true;
     const cat = project.category.toUpperCase();
     if (filter === 'IDENTITY') return cat.includes('IDENTITY') || cat.includes('BRANDING');
+    if (filter === 'POP') return cat.includes('POP');
     if (filter === 'DIGITAL') return cat.includes('UI') || cat.includes('UX') || cat.includes('PRODUCT') || cat.includes('WEBSITE');
     if (filter === 'PRINT') return cat.includes('PRINT') || cat.includes('EDITORIAL');
     return false;
