@@ -109,7 +109,7 @@ export const PROJECTS: Project[] = [
   }, {
     id: "emozione3 pop",
     title: "Emozione3 Pop",
-    category: "PRINT",
+    category: "PRINT/POP",
     tags: ["PRINT/POP"],
     image: projectThumb("emozione3-pop"),
     gallery: projectGallery("emozione3-pop"),

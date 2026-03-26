@@ -113,6 +113,7 @@ export const TRANSLATIONS = {
         filters: {
         ALL: 'TUTTI',
         IDENTITY: 'IDENTITÀ',
+        POP: 'POP',
         DIGITAL: 'DIGITALE',
         PRINT: 'STAMPA',
       },
