@@ -170,8 +170,8 @@ export const PROJECTS: Project[] = [
   {
     id: "ilmarmo",
     title: "Il Marmo Brochure",
-    category: "BRANDING",
-    tags: ["BRANDING"],
+    category: "EDITORIAL",
+    tags: ["PRINT"],
     image: projectThumb("ilmarmo"),
     gallery: projectGallery("ilmarmo"),
     description: {
