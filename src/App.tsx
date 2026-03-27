@@ -114,7 +114,7 @@ export default function App() {
       <main className="flex-1 h-full overflow-y-auto no-scrollbar relative z-10">
         {/* Mobile Header */}
         <div className="md:hidden flex justify-between items-center p-6 border-b border-ink/10 bg-background-light sticky top-0 z-30">
-          <h1 className="text-lg font-medium tracking-[0.1em] uppercase font-montserrat">BRU BULGARELLI</h1>
+          <p className="text-lg font-medium tracking-[0.1em] uppercase font-montserrat">BRU BULGARELLI</p>
           <div className="flex items-center gap-4">
             <button 
               onClick={() => setLanguage(language === 'EN' ? 'IT' : 'EN')}
