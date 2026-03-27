@@ -32,6 +32,69 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
 
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Schema.org: Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://bru-portfolio-flax.vercel.app/#person",
+      "name": "Bruna Bulgarelli",
+      "alternateName": "Bru Bulgarelli",
+      "url": "https://bru-portfolio-flax.vercel.app/",
+      "jobTitle": "Brand & Visual Designer",
+      "description": "Brand and Visual Designer with 30+ years of experience specialising in brand identity, visual systems, editorial design and packaging for hospitality, retail and corporate clients.",
+      "email": "bulgarellibru@gmail.com",
+      "telephone": "+393473587524",
+      "address": {
+        "@type": "PostalAddress",
+        "postalCode": "37067",
+        "addressLocality": "Valeggio sul Mincio",
+        "addressRegion": "VR",
+        "addressCountry": "IT"
+      },
+      "knowsLanguage": ["Italian", "English"],
+      "knowsAbout": [
+        "Brand Identity",
+        "Visual Systems Design",
+        "Editorial Design",
+        "Packaging Design",
+        "Web & Digital Design",
+        "Print Production",
+        "Luxury Hospitality Branding"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/bruna-bulgarelli-8a9b7819/",
+        "https://www.behance.net/brubulgarelli"
+      ]
+    }
+    </script>
+
+    <!-- Schema.org: ProfilePage + WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfilePage",
+          "@id": "https://bru-portfolio-flax.vercel.app/#profilepage",
+          "name": "Bru Bulgarelli — Brand & Visual Designer Portfolio",
+          "url": "https://bru-portfolio-flax.vercel.app/",
+          "description": "Portfolio and professional profile of Bruna Bulgarelli, Brand & Visual Designer based in Valeggio sul Mincio, Verona, Italy.",
+          "inLanguage": ["it", "en"],
+          "dateModified": "2026-03-27",
+          "mainEntity": { "@id": "https://bru-portfolio-flax.vercel.app/#person" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://bru-portfolio-flax.vercel.app/#website",
+          "name": "Bru Bulgarelli — Brand & Visual Designer",
+          "url": "https://bru-portfolio-flax.vercel.app/",
+          "publisher": { "@id": "https://bru-portfolio-flax.vercel.app/#person" }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
