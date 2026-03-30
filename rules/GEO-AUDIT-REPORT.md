@@ -1,421 +1,367 @@
 # GEO Audit Report: Bru Bulgarelli
 
-**Audit Date:** 2026-03-27
+**Audit Date:** 2026-03-27 (v2 — Post-Fix Re-Audit)
 **URL:** https://bru-portfolio-flax.vercel.app/
 **Business Type:** Personal Portfolio — Freelance Brand & Visual Designer
-**Pages Analyzed:** 1 (single-page application, URL never changes)
-**Auditor:** GEO-SEO Claude Skill v1.0
+**Pages Analyzed:** 1 (single-page application)
+**Previous Score:** 23/100 (Critical)
 
 ---
 
 ## Executive Summary
 
-**Overall GEO Score: 23/100 (Critical)**
+**Overall GEO Score: 51/100 — Poor (+28 points from v1)**
 
-Bru Bulgarelli's portfolio site is effectively invisible to AI search engines. The site is a client-side rendered React SPA that delivers a near-empty HTML shell to any crawler that doesn't execute JavaScript — which includes GPTBot (ChatGPT), ClaudeBot, and PerplexityBot. The underlying content (30 years of design experience, 9 portfolio projects, rich client history spanning hospitality and FMCG) is strong raw material but is almost entirely unreachable by AI systems in the current architecture. The most urgent priority is architectural: content must be available in HTML at response time before any other GEO optimization can take effect.
+In a single session, the site moved from "Critical" to "Poor" — a 28-point improvement representing one of the most efficient GEO gains achievable. The key wins: all metadata (meta description, OG tags, Twitter Cards, hreflang, canonical) is now in the static HTML; two JSON-LD schemas (Person + ProfilePage/WebSite) are crawler-readable without JavaScript; a `robots.txt` with explicit AI crawler directives, `sitemap.xml`, and `llms.txt` are all live; and full static HTML content (About bio, all 7 experience entries, all 9 portfolio descriptions) is now visible to non-JS crawlers. The ceiling above 51 is held by a single structural constraint: no third-party corroboration exists anywhere on the web.
 
 ---
 
 ## Score Breakdown
 
-| Category | Score | Weight | Weighted Score |
-|---|---|---|---|
-| AI Citability | 31/100 | 25% | 7.75 |
-| Brand Authority | 8/100 | 20% | 1.60 |
-| Content E-E-A-T | 52/100 | 20% | 10.40 |
-| Technical GEO | 17/100 | 15% | 2.55 |
-| Schema & Structured Data | 0/100 | 10% | 0.00 |
-| Platform Optimization | 8/100 | 10% | 0.80 |
-| **Overall GEO Score** | | | **23/100 — Critical** |
+| Category | v1 Score | v2 Score | Change | Weight | Weighted |
+|---|---|---|---|---|---|
+| AI Citability | 31/100 | 64/100 | +33 | 25% | 16.00 |
+| Brand Authority | 8/100 | 17/100 | +9 | 20% | 3.40 |
+| Content E-E-A-T | 52/100 | 67/100 | +15 | 20% | 13.40 |
+| Technical GEO | 17/100 | 71/100 | +54 | 15% | 10.65 |
+| Schema & Structured Data | 0/100 | 62/100 | +62 | 10% | 6.20 |
+| Platform Optimization | 8/100 | 17/100 | +9 | 10% | 1.70 |
+| **Overall GEO Score** | **23/100** | **51/100** | **+28** | | **51.35** |
 
 ---
 
-## Critical Issues (Fix Immediately)
+## What Was Fixed (v1 → v2)
 
-### CRITICAL-1: JavaScript-only rendering — AI crawlers see 1 word of content
-
-**Impact:** Eliminates all GEO value from the site
-**Detail:** A non-JS crawl of `https://bru-portfolio-flax.vercel.app/` returns only the string "Bru Bulgarelli" — the page title. The entire portfolio, career history, capabilities, projects, and contact information is rendered client-side in React. GPTBot, ClaudeBot, and PerplexityBot are documented non-JS crawlers. From their perspective, this site contains one word.
-**Fix:** Migrate to Next.js (SSR/SSG), Astro (static), or add Vercel Edge rendering. The content is already structured in React components — this is primarily a build configuration change, not a content rewrite. Alternatively, pre-render static HTML at build time and inject it into `index.html`.
+| Fix | Status | Impact |
+|---|---|---|
+| Meta description (full, specific) | ✅ Done | High |
+| Canonical URL tag | ✅ Done | Medium |
+| Open Graph tags (full suite incl. `og:type=profile`) | ✅ Done | High |
+| `profile:first_name` / `profile:last_name` OG tags | ✅ Done | Medium |
+| Twitter Card tags | ✅ Done | Medium |
+| Hreflang (en, it, x-default) | ✅ Done | Medium |
+| `meta robots` directive | ✅ Done | Medium |
+| JSON-LD Person schema | ✅ Done | Critical |
+| JSON-LD ProfilePage + WebSite schema | ✅ Done | High |
+| robots.txt with AI crawler Allow directives | ✅ Done | High |
+| sitemap.xml | ✅ Done | Medium |
+| llms.txt | ✅ Done | High |
+| About bio in static HTML (~150 words) | ✅ Done | Critical |
+| All 9 portfolio descriptions in static HTML | ✅ Done | High |
+| Full experience timeline in static HTML | ✅ Done | High |
+| Page title improved | ✅ Done | Medium |
+| Duplicate H1 fixed (nav now `<p>`) | ✅ Done | Low |
 
 ---
 
-### CRITICAL-2: Complete absence of structured data (Schema.org)
+## Remaining Issues
 
-**Impact:** No machine-readable identity signal for AI entity recognition
-**Detail:** Zero JSON-LD scripts, zero microdata, zero schema.org markup of any kind. AI systems cannot resolve "Bru Bulgarelli" as a named entity, link her to her specialization, or connect her to her past clients.
-**Fix:** Add `Person`, `ProfilePage`, and `WebSite` schemas to `index.html` immediately. These are static strings — they work even without SSR and are readable by AI crawlers regardless of JavaScript execution. Ready-to-use code is provided in the Schema section below.
+### High Priority
+
+**HIGH-1: No third-party corroboration — the primary authority ceiling**
+
+This single gap is responsible for the Brand Authority score staying at 17/100 and capping the overall score. AI systems weight entity claims far more heavily when independent sources corroborate them. Currently, the schema, llms.txt, and bio all make claims about Bruna Bulgarelli that no external source on the open web confirms.
+
+**Fastest paths to fix:**
+1. Publish a LinkedIn article (400–600 words) crediting her work on Hotel Caesius or the Emozione3 rebrand — AI systems index LinkedIn articles
+2. Ask a past client contact (Europlan, Hotel Caesius, Wishdays) to publish a brief LinkedIn recommendation that links to the portfolio
+3. Submit one portfolio project to Behance's featured projects — a Behance editorial feature creates an attributable third-party citation
+4. List the studio in an Italian design directory (ADI, Grafiche.it, or similar)
 
 ---
 
-### CRITICAL-3: No meta description, Open Graph, or Twitter Card tags
+**HIGH-2: No custom domain**
 
-**Impact:** Crawlers that do fetch the page see no professional summary
-**Detail:** `<meta name="description">` is absent. All Open Graph properties (`og:title`, `og:description`, `og:image`, `og:type`) are absent. Twitter Card tags are absent. Even crawlers that cache the page shell have no machine-readable summary of who this person is.
-**Fix:** Add to `index.html` `<head>`:
-```html
-<meta name="description" content="Bru Bulgarelli — Brand & Visual Designer with 30+ years of experience in brand identity, visual systems, and packaging. Specialising in hospitality and commercial clients. Based in Verona, Italy.">
-<meta property="og:title" content="Bru Bulgarelli — Brand & Visual Designer">
-<meta property="og:description" content="Brand identity and visual systems for hospitality, cultural and commercial brands. 30+ years experience. Based in Verona, Italy.">
-<meta property="og:type" content="profile">
-<meta property="og:url" content="https://bru-portfolio-flax.vercel.app/">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bru Bulgarelli — Brand & Visual Designer">
-<meta name="twitter:description" content="Brand identity and visual systems for hospitality, cultural and commercial brands. Based in Verona, Italy.">
+The site lives at `bru-portfolio-flax.vercel.app`. The JSON-LD `@id` anchor, schema `@id` URIs, and all external links point to a generated Vercel subdomain. This:
+- Signals a provisional/experimental deployment to AI systems
+- Caps domain authority accumulation
+- Means any future citations will point to a low-trust subdomain
+
+**Fix:** Register `brubulgarelli.com` or `brubulgarelli.it` (under €15/year). Update the JSON-LD `@id`, `sameAs` on LinkedIn/Behance, and llms.txt canonical URL. Deploy with Vercel's custom domain feature (free). This is the highest ROI infrastructure change remaining.
+
+---
+
+**HIGH-3: No client testimonials**
+
+Zero testimonials, zero client quotes on the site. Authoritativeness — the "A" in E-E-A-T — cannot be self-declared. Even one attributed quote from a past client at a named company would materially improve both the E-E-A-T score and AI citation probability.
+
+**Fix:** Ask 2–3 past colleagues or clients for a 2–3 sentence quote. Display with full name, title, and company. Format for schema (`Review` or `Recommendation` type on the Person).
+
+---
+
+### Medium Priority
+
+**MEDIUM-1: No measurable outcomes in project descriptions**
+
+All 9 project descriptions are process-oriented ("designed X", "created Y"). None state a result. AI systems weigh factual precision heavily when deciding whether a passage is citable.
+
+**Examples of outcome additions:**
+- Hotel Caesius: "…implemented across 6 hotel properties across Lake Garda"
+- Europlan: "…sustaining visual continuity across 7 years of seasonal campaigns"
+- Emozione3 Pop: "…deployed across 300+ points of sale in shopping malls and bookstores"
+- Kalika: "…covering 3 retail locations in urban Verona"
+
+---
+
+**MEDIUM-2: Person schema missing `image` property**
+
+The JSON-LD Person schema has no `image` field. This is required for Google Knowledge Panel eligibility and is used by AI assistants for visual identity anchoring.
+
+**Fix:** Add to Person schema:
+```json
+"image": {
+  "@type": "ImageObject",
+  "url": "https://bru-portfolio-flax.vercel.app/[photo-filename].jpg",
+  "caption": "Bruna Bulgarelli — Brand & Visual Designer"
+}
 ```
 
 ---
 
-## High Priority Issues
+**MEDIUM-3: No CreativeWork schema for portfolio projects**
 
-### HIGH-1: No llms.txt file
+Each portfolio project should have a `CreativeWork` (or `VisualArtwork`) JSON-LD entry. This turns portfolio items into citable named entities in AI knowledge graphs.
 
-**Detail:** `https://bru-portfolio-flax.vercel.app/llms.txt` returns 404. The llms.txt standard is the dedicated mechanism for telling AI systems what a site contains. For a personal portfolio, a well-written llms.txt is the fastest path to AI discoverability.
-**Fix:** Create `/public/llms.txt` (auto-served by Vercel) with:
+**Fix:** Add an `ItemList` + `CreativeWork` block to the existing JSON-LD. Example for Hotel Caesius:
+```json
+{
+  "@type": "VisualArtwork",
+  "name": "Hotel Caesius Brand Book",
+  "creator": { "@id": "https://bru-portfolio-flax.vercel.app/#person" },
+  "description": "Visual identity system and brand guidelines for Hotel Caesius, a luxury hospitality brand on Lake Garda.",
+  "artMedium": "Brand Identity, Print",
+  "keywords": ["brand identity", "hospitality branding", "Lake Garda", "brand guidelines"]
+}
+```
+
+---
+
+**MEDIUM-4: llms.txt lacks markdown section headers and specifics**
+
+The current llms.txt is a prose summary. For maximum AI ingestion quality, it should use `## Section` headers and include concrete specifics (named clients, years, deliverables, contact method).
+
+**Recommended structure:**
 ```
 # Bru Bulgarelli — Brand & Visual Designer
 
-Bruna Bulgarelli (Bru Bulgarelli) is an Italian brand and visual designer based in Valeggio sul Mincio (Verona), Italy.
+## About
+[2-3 sentence bio with location, specialization, years]
 
-She specialises in: brand identity, visual systems, editorial design, packaging, and print production for hospitality, cultural, and commercial clients.
+## Expertise
+[Discipline list with brief descriptions]
 
-30+ years of experience including:
-- Lead Designer at Europlan S.p.A. (2017–2024), designing for a portfolio of Italian hotels and residences
-- Founder of Pressart S.r.l. (1995–2002), a creative agency specialising in branding and print
-- Team leader roles at Wishdays and Verba DDB
+## Notable Clients
+[Client: context/project one-liner]
 
-Notable clients: Hotel Caesius (Lake Garda luxury hospitality), Europlan Group hotels, PAM/Panorama Group (Italy's largest supermarket chain), Emozione3
+## Professional Timeline
+[Structured year-by-year with company, role, key deliverable]
 
-Contact: bulgarellibru@gmail.com | +39 347 3587524
-Available for freelance brand identity and visual system projects.
+## Contact
+[Email, phone, availability status]
 
 ## Links
-- LinkedIn: https://www.linkedin.com/in/bruna-bulgarelli-8a9b7819/
-- Behance: https://www.behance.net/brubulgarelli
+[LinkedIn, Behance, CV]
 ```
 
 ---
 
-### HIGH-2: No robots.txt or sitemap.xml
+**MEDIUM-5: Single URL — no per-project or per-section URLs**
 
-**Detail:** Both return 404. While the absence of robots.txt defaults to allow-all (not a blocking issue), the lack of a sitemap means crawlers have no structured inventory of site content.
-**Fix:** Add `/public/robots.txt`:
+The entire site (7 experience entries, 9 projects, capabilities, contact) lives at one URL. AI crawlers cannot index sections independently. A dedicated URL per portfolio project would create 9 additional crawlable endpoints.
+
+**Fix:** Implement React Router or Next.js routes so `/projects/hotel-caesius`, `/experience`, etc. are real URLs with their own `<title>` and meta. Update sitemap.xml to include all routes.
+
+---
+
+### Low Priority
+
+**LOW-1: `og:image` not confirmed**
+Verify that `og:image` is set in the HTML. Without it, AI crawlers that render OG cards and social sharing will use no image or a fallback.
+
+**LOW-2: WebSite schema missing `potentialAction`**
+Add `SearchAction` to the WebSite schema for sitelinks eligibility.
+
+**LOW-3: `robots.txt` — add `OAI-SearchBot` and `anthropic-ai` to explicit allowlist**
+Current explicit allowlist covers GPTBot, ClaudeBot, PerplexityBot, Googlebot, Bingbot. Add:
 ```
-User-agent: *
+User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: GPTBot
+User-agent: anthropic-ai
 Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-Sitemap: https://bru-portfolio-flax.vercel.app/sitemap.xml
 ```
-Add `/public/sitemap.xml` pointing to the homepage (and section anchors or individual project URLs once SSR is implemented).
 
----
+**LOW-4: No Wikidata entity**
+A minimal Wikidata Q-number (instance of: human; occupation: graphic designer; country: Italy; website; sameAs) makes the entity resolvable in knowledge graph queries. Not yet achievable without more external citations but worth planning for.
 
-### HIGH-3: Single URL for entire site — no indexable sections
-
-**Detail:** Every section (Experience, Capabilities, Selected Works, Contacts) lives at the same URL with no hash changes or route changes. AI crawlers cannot index sections individually. There is no `/experience`, `/projects/hotel-caesius`, or `/about` URL to cite.
-**Fix:** Implement hash routing at minimum (`/#experience`, `/#projects`, `/#contact`) with corresponding canonical tags. Preferred: true route-based navigation with SSR so each section/project is a distinct, crawlable URL.
-
----
-
-### HIGH-4: No "About" bio section answering "Who is Bru Bulgarelli?"
-
-**Detail:** The hero bio is one sentence (38 words). No page on the site directly answers the question AI assistants are most likely to query: "who is Bru Bulgarelli?", "who is a good Italian hospitality brand designer?". This is the single highest-impact content gap.
-**Fix:** Add an "About" section with a structured biography of ~150 words. Draft:
-
-> "Bru Bulgarelli is an Italian brand and visual designer based in Valeggio sul Mincio, Verona, with over 30 years of professional experience spanning agency, in-house, and freelance work. She specialises in brand identity systems, editorial design, and packaging for hospitality, retail, and cultural clients. From 2017 to 2024 she was Lead Designer at Europlan S.p.A., directing visual communications for a portfolio of Italian hotels and residences. She co-founded the creative agency Pressart S.r.l. in 1995. Her work has spanned clients including Hotel Caesius on Lake Garda, PAM Group (Italy's largest supermarket chain), and Wishdays. Her tools include the Adobe Creative Suite, and she has developed XML-based automated layout systems for high-volume retail production. Bru Bulgarelli is currently available for freelance brand identity and visual system projects."
-
----
-
-## Medium Priority Issues
-
-### MEDIUM-1: No custom domain
-
-The site uses `bru-portfolio-flax.vercel.app` — a generated Vercel subdomain. A custom domain (e.g., `brubulgarelli.com` or `brubulgarelli.it`) is the baseline for domain authority, entity recognition, and professional credibility in AI knowledge graphs.
-
-### MEDIUM-2: Portfolio projects lack descriptive text (7 of 9)
-
-Only Hotel Caesius has a project description. The remaining 8 projects are title + category label only. Images are not readable by AI. Without text, these projects contribute zero citability signal.
-
-### MEDIUM-3: No client testimonials or social proof
-
-Zero testimonials, zero client quotes, zero outcome metrics. Authoritativeness — the "A" in E-E-A-T — depends on what others say, not what you say. This is the primary authority gap.
-
-### MEDIUM-4: No Wikipedia / Wikidata entity
-
-"Bru Bulgarelli" does not resolve in Wikidata or Wikipedia. AI systems use Wikidata Q-numbers as canonical entity identifiers. Without one, cross-platform entity matching is unreliable.
-
-### MEDIUM-5: Duplicate H1 tags
-
-The DOM contains two `<h1>` elements:
-- `"BRU BULGARELLIPORTFOLIO 2026"` (hidden, likely the loading screen)
-- `"BRU BULGARELLI"` (visible header)
-
-Multiple H1s confuse crawlers and dilute heading hierarchy. Use a single H1 for the person's name and role.
-
----
-
-## Low Priority Issues
-
-### LOW-1: Image alt text is generic for gallery images
-
-Portfolio gallery images use pattern `"Hotel Caesius Brand Book gallery 0"` through `"gallery 11"`. These should describe the actual visual content for accessibility and content signals.
-
-### LOW-2: No education or certification mentions
-
-No mention of formal design education, professional certifications, or continuing education. These add E-E-A-T trust signals, particularly for AI systems evaluating professional credentials.
-
-### LOW-3: No canonical URL tag
-
-Without a canonical URL, crawlers cannot determine the authoritative URL for the page. Add `<link rel="canonical" href="https://bru-portfolio-flax.vercel.app/">`.
-
-### LOW-4: No hreflang for bilingual content
-
-The site supports English and Italian via a toggle, but no `hreflang` tags declare this to crawlers. Add `<link rel="alternate" hreflang="it" href="...">` and `<link rel="alternate" hreflang="en" href="...">`.
+**LOW-5: Hidden H1 still present**
+`<h1>BRU BULGARELLIPORTFOLIO 2026</h1>` (the loading screen element) is the only H1 in the DOM. The visible "BRAND & VISUAL DESIGNER" heading is an H2. Consider either making "Bru Bulgarelli" an H1 in the primary content or hiding the loading element from screen readers and crawlers.
 
 ---
 
 ## Category Deep Dives
 
-### AI Citability — 31/100
+### AI Citability — 64/100 (+33)
 
-**Strongest existing passage:**
-> "Hotel Caesius is a luxury hospitality brand located on Lake Garda. The project involved the creation of a visual identity system and brand guidelines for print and digital applications. The identity was implemented across all hotel touchpoints including printed materials, digital platforms and internal brand documentation."
+**Top citable passages (ready for AI extraction now):**
 
-This is the only passage approaching AI citability standards. It names a client, provides geographic context, describes deliverables, and has sufficient length. It is the template for all other project descriptions.
+1. **About bio** — strongest, most self-contained:
+   > "Bruna Bulgarelli is an Italian brand and visual designer based in Valeggio sul Mincio, Verona, Italy, with over 30 years of professional experience. She specialises in brand identity systems, editorial design, and packaging for hospitality, retail, and cultural clients. From 2017 to 2024 she was Lead Designer at Europlan S.p.A., directing visual communications for a portfolio of Italian hotels and residences on Lake Garda."
 
-**Core problem:** Content is structured as job duty lists, not answer blocks. AI systems preferentially cite content that directly answers a question. None of the site's content is framed as an answer to any question a user might ask.
+2. **PAM Group passage** — named client + scale signal:
+   > "Promotional materials, flyers, POP displays and in-store signage for Italy's largest supermarket group (PAM Group, Panorama). Coordination and design at Verba DDB, Verona."
 
-**Rewrite priority:** Experience entries need numbers and outcomes. "Coordination of the in-house design team" → "Led a design team of [N] at Wishdays S.r.l., managing seasonal production cycles and developing brand guidelines for [N] distinct labels."
+3. **Emozione3 Brand Book** — named client + defined deliverable:
+   > "Rebranding of Emozione3, an Italian gift box company (Wish Days S.r.l., Verona). Defined new visual identity system including logo usage, tone of voice and brand applications for print and digital platforms."
 
-**Realistic score after fixes:** 62–68/100
+**Remaining citability gap:** Project descriptions average 40–60 words. Optimal AI citation passages are 134–167 words. Expanding the top 3 projects (Hotel Caesius, Europlan, Emozione3) to 150+ words with outcome data would push this score to ~75.
 
 ---
 
-### Brand Authority — 8/100
+### Brand Authority — 17/100 (+9)
+
+The schema work created entity anchors — machine-readable claims about who Bruna is. But brand authority is corroboration density: how many independent sources confirm those claims. Currently: zero.
 
 **Platform presence map:**
+| Platform | Status |
+|---|---|
+| LinkedIn | ✅ Exists — schema-linked |
+| Behance | ✅ Exists — schema-linked |
+| Wikidata | ❌ No entity |
+| Wikipedia | ❌ No article |
+| Reddit mentions | ❌ None found |
+| YouTube | ❌ No presence |
+| Italian design press | ❌ No mentions |
+| Client attribution (external) | ❌ None |
 
-| Platform | Status | Priority |
+---
+
+### Content E-E-A-T — 67/100 (+15)
+
+| Dimension | Score | Notes |
 |---|---|---|
-| LinkedIn | ✓ Exists | Develop further, publish case studies |
-| Behance | ✓ Exists | Complete, add project descriptions |
-| Instagram | ✗ Handle taken by unrelated person | Use @brubulgarelli_design |
-| Wikipedia | ✗ No entry | Not yet achievable — build other signals first |
-| Wikidata | ✗ No entity | Create minimal entry — achievable now |
-| YouTube | ✗ No presence | Not a priority |
-| Reddit | ✗ No mentions | Build via community engagement (r/graphic_design) |
-| Design awards | ✗ No entries | Submit 1–2 projects to Italian design awards |
-
-**Key blocker:** No third-party source credits Bruna Bulgarelli as the designer of any project. Hotel Caesius, Europlan, and PAM Group are all real, indexed brands — but none of their websites or press materials link back to her as the designer. Establishing that attribution chain is the fastest path to brand authority.
+| Experience | 84/100 | 30-yr career, 7 named roles, co-founder, scale clients now documented |
+| Expertise | 72/100 | Production specifics (CMYK/Pantone, XML workflows, wayfinding) demonstrate craft depth |
+| Authoritativeness | 26/100 | All signals still self-asserted; no external validation |
+| Trustworthiness | 62/100 | Real identity + location + contact clear; no outcomes, no domain |
 
 ---
 
-### Content E-E-A-T — 52/100
+### Technical GEO — 71/100 (+54)
 
-| Dimension | Score | Key finding |
+| Dimension | v1 | v2 |
 |---|---|---|
-| Experience (E) | 72/100 | 30-year career timeline with named employers is genuinely strong |
-| Expertise (E) | 58/100 | Skills listed but not demonstrated through case studies |
-| Authoritativeness (A) | 22/100 | Zero external citations, testimonials, or awards |
-| Trustworthiness (T) | 56/100 | Real identity signals present; no outcome evidence |
+| AI Crawler Access (robots.txt) | 10 | 95 |
+| Content Discoverability | 5 | 78 |
+| llms.txt | 0 | 72 |
+| Meta Tags | 20 | 92 |
+| Technical Foundation | 30 | 68 |
+| URL Structure / Internal Linking | 15 | 18 |
 
-**Strength:** The career timeline (1995–2025) with named Italian companies is the site's most valuable content asset. Seven roles at recognisable Italian businesses establishes real experience.
-
-**Gap:** Authoritativeness cannot be self-declared. The current site is entirely self-referential. Three client testimonials with full names and company references would more than double the authoritativeness score.
+The only dimension that didn't materially move is URL structure — inherent to the SPA architecture.
 
 ---
 
-### Technical GEO — 17/100
+### Schema & Structured Data — 62/100 (+62)
 
-| Dimension | Score | Finding |
+| Schema | Status | Quality |
 |---|---|---|
-| AI Crawler Access | 45/100 | No robots.txt — crawlers not blocked but not guided |
-| Content Discoverability | 5/100 | JS-only rendering — near-zero indexable content |
-| llms.txt | 0/100 | 404 Not Found |
-| Meta Tags | 8/100 | Only lang + viewport present |
-| Technical Foundation | 62/100 | Vercel CDN, HTTPS, Tailwind — solid infrastructure |
-| URL Structure | 3/100 | Single URL, no internal links, no hash routing |
-
-The infrastructure is good (Vercel, HTTPS, CDN). The rendering strategy cancels every infrastructure advantage.
+| Person | ✅ Implemented | Strong — name, @id, jobTitle, address, knowsAbout, sameAs |
+| ProfilePage | ✅ Implemented | Good — mainEntity cross-reference correct |
+| WebSite | ✅ Implemented | Basic — missing potentialAction |
+| Person.image | ❌ Missing | Critical gap |
+| CreativeWork (projects) | ❌ Missing | High value — 9 portfolio items not yet schema-marked |
+| ItemList | ❌ Missing | Needed to wrap portfolio entries |
 
 ---
 
-### Schema & Structured Data — 0/100
+### Platform Optimization — 17/100 (+9)
 
-**Current state:** Zero. No JSON-LD, no microdata, no schema.org markup.
-
-**Recommended schemas in implementation order:**
-
-1. **Person** (Critical — implement this week)
-2. **ProfilePage** + **WebSite** (High — same session as Person)
-3. **CreativeWork** per portfolio project (Medium — after SSR)
-4. **ItemList** for portfolio grid (Medium — after SSR)
-5. **ProfessionalService** (Low — after domain registration)
-
-**Ready-to-use Person schema** (paste into `<head>` of `index.html`):
-
-```html
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://bru-portfolio-flax.vercel.app/#person",
-  "name": "Bruna Bulgarelli",
-  "alternateName": "Bru Bulgarelli",
-  "url": "https://bru-portfolio-flax.vercel.app/",
-  "jobTitle": "Brand & Visual Designer",
-  "description": "Brand and Visual Designer with 30+ years of experience specialising in brand identity, visual systems, editorial design, and packaging for hospitality, retail, and corporate clients.",
-  "email": "bulgarellibru@gmail.com",
-  "telephone": "+393473587524",
-  "address": {
-    "@type": "PostalAddress",
-    "postalCode": "37067",
-    "addressLocality": "Valeggio sul Mincio",
-    "addressRegion": "VR",
-    "addressCountry": "IT"
-  },
-  "knowsLanguage": ["Italian", "English"],
-  "knowsAbout": ["Brand Identity", "Visual Systems Design", "Editorial Design", "Packaging Design", "Web & Digital Design", "Print Production", "Luxury Hospitality Branding"],
-  "sameAs": [
-    "https://www.linkedin.com/in/bruna-bulgarelli-8a9b7819/",
-    "https://www.behance.net/brubulgarelli"
-  ]
-}
-</script>
-```
-
-**ProfilePage + WebSite schema:**
-
-```html
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "ProfilePage",
-      "@id": "https://bru-portfolio-flax.vercel.app/#profilepage",
-      "name": "Bru Bulgarelli — Brand & Visual Designer Portfolio",
-      "url": "https://bru-portfolio-flax.vercel.app/",
-      "description": "Portfolio and professional profile of Bruna Bulgarelli, Brand & Visual Designer based in Valeggio sul Mincio, Italy.",
-      "inLanguage": ["it", "en"],
-      "dateModified": "2026-03-27",
-      "mainEntity": { "@id": "https://bru-portfolio-flax.vercel.app/#person" }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://bru-portfolio-flax.vercel.app/#website",
-      "name": "Bru Bulgarelli — Brand & Visual Designer",
-      "url": "https://bru-portfolio-flax.vercel.app/",
-      "publisher": { "@id": "https://bru-portfolio-flax.vercel.app/#person" }
-    }
-  ]
-}
-</script>
-```
-
----
-
-### Platform Optimization — 8/100
-
-| Platform | Readiness | Notes |
+| Platform | Readiness | Blocker |
 |---|---|---|
-| Google AI Overviews | 5/100 | JS rendering + no schema = invisible |
-| ChatGPT / GPTBot | 5/100 | No SSR, GPTBot can't read content |
-| Perplexity | 12/100 | Live-fetch with JS execution helps slightly |
-| Gemini | 8/100 | Google index empty without SSR |
-| Bing Copilot | 8/100 | No meta tags, no schema |
-
-All platforms blocked primarily by the JS rendering issue.
+| Google AI Overviews | 35/100 | No custom domain, no inbound links |
+| ChatGPT / GPTBot | 40/100 | Static HTML + Person schema now readable |
+| Perplexity | 42/100 | llms.txt + meta tags help; no external citations |
+| Gemini | 35/100 | Google index improving; no domain authority |
+| Bing Copilot | 35/100 | Same as Google |
 
 ---
 
-## Quick Wins (Implement This Week)
+## Quick Wins (Next Session)
 
-1. **Add JSON-LD schemas to `index.html`** — Person + ProfilePage + WebSite schemas are static strings that go directly in `<head>`. No framework changes needed. Immediately readable by all AI crawlers. Estimated time: 30 minutes.
+1. **Register custom domain** — Move to `brubulgarelli.com` or `brubulgarelli.it`. Update all schema `@id` and `sameAs` URLs. Estimated time: 30–60 min. Impact: +5–8 pts.
 
-2. **Add meta description + Open Graph tags to `index.html`** — Five lines of HTML in `<head>`. Transforms how every crawler summarises the page. Estimated time: 15 minutes.
+2. **Add `Person.image` to JSON-LD** — One ImageObject block with the photo URL, width, height, and caption. Estimated time: 10 min. Impact: +3–5 pts schema, Knowledge Panel eligibility.
 
-3. **Create `/public/llms.txt`** — Plain text file, auto-served by Vercel. Write a 200-word structured summary of who Bruna is and what she does. Estimated time: 20 minutes.
+3. **Add outcome phrases to 3 project descriptions** — Add one sentence of scope/result to Hotel Caesius, Europlan, and Emozione3. e.g. "deployed across 6 hotel properties on Lake Garda". Estimated time: 20 min. Impact: +3–5 pts citability.
 
-4. **Create `/public/robots.txt`** with explicit AI crawler Allow directives and a sitemap pointer. Estimated time: 10 minutes.
+4. **Improve llms.txt with `##` section headers** — Restructure into About, Expertise, Notable Clients, Professional Timeline, Contact, Links. Estimated time: 20 min. Impact: +3–4 pts technical.
 
-5. **Fix the duplicate H1** — The hidden loading H1 (`"BRU BULGARELLIPORTFOLIO 2026"`) should be removed or changed to a `<p>` or `<span>`. Estimated time: 5 minutes.
-
-**Total time for all 5 quick wins: ~80 minutes. Estimated score improvement: +12 to +18 points.**
+5. **Publish one LinkedIn article about a project** — 400–600 words about Hotel Caesius or Emozione3 rebrand, naming Bruna as the designer. Estimated time: 60 min. Impact: +8–12 pts brand authority (first external citation).
 
 ---
 
 ## 30-Day Action Plan
 
-### Week 1: Technical Foundation (No Content Rewriting Required)
-- [ ] Add Person + ProfilePage + WebSite JSON-LD to `index.html`
-- [ ] Add meta description, Open Graph, and Twitter Card tags to `index.html`
-- [ ] Create `/public/llms.txt` with structured professional summary
-- [ ] Create `/public/robots.txt` with AI crawler directives
-- [ ] Add canonical URL tag to `index.html`
-- [ ] Fix duplicate H1 element
-- [ ] Register custom domain (brubulgarelli.com or brubulgarelli.it)
+### Week 1: Domain + Schema Completion
+- [ ] Register custom domain (`brubulgarelli.com` or `.it`)
+- [ ] Configure Vercel custom domain, update all schema `@id` URIs
+- [ ] Add `Person.image` to JSON-LD schema
+- [ ] Add `CreativeWork` entries for top 3 portfolio projects (Hotel Caesius, Europlan, Emozione3)
+- [ ] Add `og:image` if not yet set
 
-### Week 2: SSR / Static Rendering Migration
-- [ ] Evaluate migration options: Next.js SSG, Astro static, or Vite pre-rendering plugin
-- [ ] Implement chosen SSR/SSG solution so all section content is in initial HTML
-- [ ] Verify crawlable content with a curl fetch: `curl -s https://[domain]/ | grep "BRAND"`
-- [ ] Add sitemap.xml once URLs are finalised
-- [ ] Implement hash-based routing at minimum (`/#experience`, `/#projects`, `/#contact`)
+### Week 2: Content Enrichment
+- [ ] Add outcome/scope sentence to all 9 project descriptions
+- [ ] Restructure llms.txt with `##` section headers and concrete specifics
+- [ ] Request 2–3 client testimonials (email former contacts at Europlan, Wishdays, Hotel Caesius)
+- [ ] Add testimonials to site once received (with `Review` schema)
 
-### Week 3: Content Depth
-- [ ] Write the "About" biography block (~150 words, see draft in HIGH-4 above)
-- [ ] Write project descriptions for all 9 portfolio items (use Hotel Caesius as template)
-- [ ] Add quantified data to Experience entries (team sizes, project volumes, brand counts)
-- [ ] Request 3 client/colleague testimonials from past employers
+### Week 3: Authority Building
+- [ ] Publish LinkedIn article: "The branding story behind [Hotel Caesius / Emozione3]" (400–600 words, names Bruna as designer)
+- [ ] Update Behance profile with full project descriptions matching site
+- [ ] Submit Hotel Caesius or Europlan project to Behance's featured/curated sections
+- [ ] List studio in ADI (Associazione per il Disegno Industriale) or Italian design directory
 
-### Week 4: Authority Building
-- [ ] Create Wikidata entity for Bruna Bulgarelli
-- [ ] Publish one LinkedIn case study article (Hotel Caesius or Europlan — 400–600 words)
-- [ ] Update Behance profile with full project descriptions matching the portfolio
-- [ ] Submit one portfolio project to an Italian design award (ADI, IF Design, or Graphis)
-- [ ] Add hreflang tags for English/Italian language versions
+### Week 4: Technical Polish + Wikidata
+- [ ] Add `WebSite.potentialAction` (SearchAction) to schema
+- [ ] Add `OAI-SearchBot` and `anthropic-ai` to robots.txt allowlist
+- [ ] Fix hidden H1 loading element
+- [ ] Create minimal Wikidata entity (after LinkedIn article is indexed — provides external citation)
+- [ ] Add `ItemList` schema wrapping portfolio CreativeWork entries
+
+---
+
+## Projected Score Trajectory
+
+| Milestone | Score | Rating |
+|---|---|---|
+| v1 (pre-fixes) | 23/100 | Critical |
+| v2 (this audit) | 51/100 | Poor |
+| After custom domain + schema completion | ~57/100 | Poor→Fair |
+| After first external citation (LinkedIn article) | ~63/100 | Fair |
+| After testimonials + outcome data | ~70/100 | Fair |
+| After Wikidata + directory listings | ~75/100 | Good |
+
+**75/100 (Good) is achievable within 30 days.**
 
 ---
 
 ## Appendix: Pages Analyzed
 
-| URL | Title | GEO Issues |
+| URL | Title | Crawlable Without JS |
 |---|---|---|
-| https://bru-portfolio-flax.vercel.app/ | Bru Bulgarelli | No SSR, no meta desc, no schema, no robots.txt, no sitemap, no llms.txt, duplicate H1, no OG tags |
+| https://bru-portfolio-flax.vercel.app/ | Bru Bulgarelli — Brand & Visual Designer | ✅ Yes (static HTML added) |
 
-**Sections within the SPA (not separately indexable):**
-| Section | Content Found | Indexable by AI Crawlers |
-|---|---|---|
-| Hero / INDEX | Role, 1-sentence bio | No (JS-rendered) |
-| EXPERIENCE | 7 roles, 1995–2025 | No (JS-rendered) |
-| CAPABILITIES | Disciplines + tools list | No (JS-rendered) |
-| SELECTED WORKS | 9 projects, 1 with description | No (JS-rendered) |
-| CONTACTS | Location, email, phone, LinkedIn, Behance | No (JS-rendered) |
+**Static content confirmed in raw HTML (no JS required):**
+- About bio (~150 words) ✅
+- 7 experience entries with dates ✅
+- Skills & Capabilities ✅
+- 9 portfolio project descriptions ✅
+- Contact information ✅
+- 2 JSON-LD schemas ✅
+- Full meta/OG/Twitter/hreflang head tags ✅
 
 ---
 
-## Projected Score After Fixes
-
-| Phase | Actions | Estimated Score |
-|---|---|---|
-| Current | Nothing done | 23/100 |
-| After Week 1 (Quick Wins) | JSON-LD + meta tags + llms.txt | 35–40/100 |
-| After Week 2 (SSR) | Full content crawlable | 48–55/100 |
-| After Week 3 (Content Depth) | Case studies + bio + experience detail | 60–68/100 |
-| After Week 4 (Authority) | LinkedIn article + Wikidata + testimonials | 68–75/100 |
-
-A score of **75/100 is achievable within 30 days** with the above plan — moving from "Critical" to "Good" and placing this portfolio in the top tier of discoverability for AI queries about Italian brand designers specialising in hospitality.
-
----
-
-*Report generated by GEO-SEO Claude Code Skill | https://github.com/zubair-trabzada/geo-seo-claude*
+*Report generated by GEO-SEO Claude Code Skill v1.0 | https://github.com/zubair-trabzada/geo-seo-claude*
+*Audit v1: 2026-03-27 23/100 → Audit v2: 2026-03-27 51/100 (+28 pts)*

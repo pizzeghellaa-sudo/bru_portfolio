@@ -743,7 +743,7 @@ function SignalSection({ language }: { language: Language }) {
   const links = [
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/bruna-bulgarelli-8a9b7819/', category: 'NETWORK' },
     { label: 'Behance', url: 'https://www.behance.net/brubulgarelli', category: 'VISUALS' },
-    { label: 'Read.cv', url: 'https://drive.google.com/file/d/1Ew3OMTzji4Hem9kgC9Dyda33ssuK89Wh/view?usp=sharing', category: 'CURRICULUM' },
+    // { label: 'Read.cv', url: 'https://drive.google.com/file/d/1Ew3OMTzji4Hem9kgC9Dyda33ssuK89Wh/view?usp=sharing', category: 'CURRICULUM' },
   ];
 
   return (
