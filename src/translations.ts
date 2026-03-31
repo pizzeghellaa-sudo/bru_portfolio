@@ -14,7 +14,7 @@ export const TRANSLATIONS = {
     index: {
       title: 'BRAND\n&\nVisual Designer',
       description: 'I design brand identities and visual systems for hospitality, cultural and commercial brands, translating strategy into cohesive visual experiences across print and digital.',
-      cta: 'Selected Work',
+      cta: 'Selected Works',
       scroll: 'SCROLL TO EXPLORE',
     },
     timeline: {
